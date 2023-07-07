@@ -1,0 +1,16 @@
+.register-btn {
+  max-width: 100%;
+  width: 100%;
+  padding: 23px 0;
+  color: #FFF;
+  background: #1565D8;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}

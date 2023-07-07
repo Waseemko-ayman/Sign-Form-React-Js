@@ -1,0 +1,22 @@
+.title {
+  max-width: 100%;
+  position: relative;
+}
+
+.title h1 {
+  color: #000;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.title p {
+  max-width: 100%;
+  width: 411px;
+  color: #8692A6;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}

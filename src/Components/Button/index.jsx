@@ -3,8 +3,9 @@ import "./style.css";
 
 class Button extends Component {
   render() {
+    const { btnText } = this.props;
     return (
-      <div>Buuto</div>
+      <button className='register-btn'>{ btnText }</button>
     )
   }
 }

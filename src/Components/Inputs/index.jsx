@@ -3,8 +3,12 @@ import "./style.css";
 
 class Inputs extends Component {
   render() {
+    const { label, type, placeholder } = this.props;
     return (
-      <div>Inputs</div>
+      <div className='input-box'>
+        <label>{ label }</label>
+        <input type={ type } placeholder={ placeholder } />
+      </div>
     )
   }
 }
