@@ -1,0 +1,49 @@
+.paragraph {
+  position: relative;
+  margin-top: 217px;
+}
+
+.paragraph span,
+.paragraph p,
+.paragraph h3 {
+  margin-left: 82px;
+}
+
+.paragraph span {
+  color: #00DAF7;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 532px;
+}
+
+.paragraph p {
+  width: 473px;
+  height: 164px;
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+  margin-top: -40px;
+  margin-bottom: 59px;
+  margin-right: 87px;
+}
+
+.paragraph h3 {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+  margin-bottom: 27px;
+  margin-right: 436px;
+}
+
+.paragraph img {
+  max-width: 100%;
+  width: 33.5px;
+  float: right;
+  margin-right: 125px;
+}

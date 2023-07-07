@@ -1,0 +1,19 @@
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 61px 20px 0 89px;
+}
+
+.logo img {
+  max-width: 100%;
+  width: 52.222px;
+}
+
+.logo span {
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

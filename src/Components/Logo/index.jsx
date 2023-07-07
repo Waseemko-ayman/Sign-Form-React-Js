@@ -3,10 +3,14 @@ import "./style.css";
 
 class Logo extends Component {
   render() {
+    const { logoImage } = this.props;
     return (
-      <div>Logo</div>
+      <div className='logo'>
+        <img src={logoImage} alt="logo" />
+        <span>Gamers</span>
+      </div>
     )
   }
 }
 
-export default Logo
+export default Logo;
