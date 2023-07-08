@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
-// import LoginPage from "../LoginPage";
-import SignPage from "../SignPage";
+import LoginPage from "../LogInPage";
+import SignPage from "../SignInPage";
 
 class GamersPage extends Component {
+  state = {
+    isSignedIn: true
+  }
+
+  togglePage = () => {
+    this.setState((prevState) => ({
+      isSignedIn: !prevState.isSignedIn
+    }))
+  }
+
   render() {
     return (
       <div>
-        {/* <LoginPage /> */}
-        <SignPage />
+        {this.state.isSignedIn ? (<SignPage togglePage={this.togglePage} />) : (<LoginPage togglePage={this.togglePage} />)}
       </div>
     )
   }

@@ -16,7 +16,7 @@ class LoginPage extends Component {
         <div className="login-box">
           <button className="back-btn">
             <i class="fa-solid fa-angle-left"></i>
-            <span>Back</span>
+            <span onClick={this.props.togglePage}>Back</span>
           </button>
           <div className="login">
             <div>
@@ -38,7 +38,7 @@ class LoginPage extends Component {
                   <Button btnText="Register Account"/>
                   <span></span>
                 </div>
-                <button className='register-btn'>login</button>
+                <button className='register-btn' onClick={this.props.togglePage}>login</button>
               </form>
             </div>
           </div>

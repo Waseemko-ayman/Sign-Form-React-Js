@@ -30,8 +30,8 @@ class SignPage extends Component {
               <Inputs label="Your email" type="email" placeholder="Write your email" imageHidden/>
               <Inputs label="Enter your Password*" type="password" placeholder="•••••••••" imageSrc="/assets/eye.svg"/>
               <div className="sign-btn">
-                <Button btnText="Login"/>
-                <p>Don't have an account? <span>Register</span></p>
+                <Button btnText="Login" />
+                <p>Don't have an account? <span onClick={this.props.togglePage}>Register</span></p>
               </div>
             </form>
           </div>
