@@ -39,7 +39,7 @@ class LoginPage extends Component {
                 <Inputs label="Create Password*" type="password" placeholder="Password" imageSrc="/assets/eye.svg" />
                 <Inputs label="Repeat password*" type="password" placeholder="Repeat password" imageSrc="/assets/eye.svg" />
                 <div className='checkbox'>
-                  <input type="checkbox" id="checkbox" checked />
+                  <input type="checkbox" id="checkbox" defaultChecked />
                   <label htmlFor="checkbox">I agree to terms & conditions</label>
                 </div>
                 <div className="register">
