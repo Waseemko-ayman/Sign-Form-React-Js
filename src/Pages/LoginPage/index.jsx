@@ -6,6 +6,14 @@ import Inputs from '../../Components/Inputs';
 import Button from '../../Components/Button';
 
 class LoginPage extends Component {
+  state = {
+
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className='login-page'>
@@ -24,18 +32,18 @@ class LoginPage extends Component {
                 <h1>Register Individual Account!</h1>
                 <p>For the purpose of gamers regulation, your details are required.</p>
               </div>
-              <form action="">
+              <form action="" onSubmit={this.handleSubmit}>
                 <Inputs label="Username*" type="text" placeholder="Enter username" imageHidden />
                 <Inputs label="Email address*" type="email" placeholder="Enter email address" imageHidden />
                 <Inputs label="Phone*" type="text" placeholder="Enter phone" imageHidden />
-                <Inputs label="Create Password*" type="password" placeholder="Password" imageSrc="/assets/eye.svg"/>
-                <Inputs label="Repeat password*" type="password" placeholder="Repeat password" imageSrc="/assets/eye.svg"/>
+                <Inputs label="Create Password*" type="password" placeholder="Password" imageSrc="/assets/eye.svg" />
+                <Inputs label="Repeat password*" type="password" placeholder="Repeat password" imageSrc="/assets/eye.svg" />
                 <div className='checkbox'>
-                  <input type="checkbox" id="checkbox" checked/>
+                  <input type="checkbox" id="checkbox" checked />
                   <label htmlFor="checkbox">I agree to terms & conditions</label>
                 </div>
                 <div className="register">
-                  <Button btnText="Register Account"/>
+                  <Button btnText="Register Account" />
                   <span></span>
                 </div>
                 <button className='register-btn' onClick={this.props.togglePage}>login</button>

@@ -16,7 +16,11 @@ class GamersPage extends Component {
   render() {
     return (
       <div>
-        {this.state.isSignedIn ? (<SignPage togglePage={this.togglePage} />) : (<LoginPage togglePage={this.togglePage} />)}
+        {
+          this.state.isSignedIn 
+          ? (<SignPage togglePage={this.togglePage} />) 
+          : (<LoginPage togglePage={this.togglePage} />)
+        }
       </div>
     )
   }
