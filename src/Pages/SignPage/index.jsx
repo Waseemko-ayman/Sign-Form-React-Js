@@ -28,7 +28,7 @@ class SignPage extends Component {
             </div>
             <form action="">
               <Inputs label="Your email" type="email" placeholder="Write your email" imageHidden/>
-              <Inputs label="Enter your Password*" type="password" placeholder="Write your password" imageSrc="/assets/eye.svg"/>
+              <Inputs label="Enter your Password*" type="password" placeholder="•••••••••" imageSrc="/assets/eye.svg"/>
               <div className="sign-btn">
                 <Button btnText="Login"/>
                 <p>Don't have an account? <span>Register</span></p>

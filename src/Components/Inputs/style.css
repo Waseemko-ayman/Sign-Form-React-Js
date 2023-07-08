@@ -27,6 +27,7 @@
   font-size: 18px;
   flex: 1;
   border: none;
+  font-family: 'Inter', sans-serif;
 }
 
 .input-box .input-div img {
@@ -40,6 +41,7 @@
 .input-box input::placeholder {
   color: #8692A6;
   font-size: 14px;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
