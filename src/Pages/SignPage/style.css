@@ -61,10 +61,12 @@
   position: relative;
 }
 
-.signUp-page .signUp-box div {
+.signUp-page .signUp-box > div {
   position: relative;
   max-width: 100%;
   width: 426px;
+  margin-top: 100px;
+  padding: 20px 0 30px;
 }
 
 .signUp-page .signUp-box .title {

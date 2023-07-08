@@ -12,13 +12,28 @@
   line-height: normal;
 }
 
-.input-box input {
-  font-size: 18px;
+.input-box .input-div {
   padding: 23px 30px 24px;
-  /* padding: 15px 30px; */
   border-radius: 6px;
   border: 1px solid #8692A6;
   margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-box input {
+  font-size: 18px;
+  flex: 1;
+  border: none;
+}
+
+.input-box .input-div img {
+  cursor: pointer;
+}
+
+.image__hidden {
+  display: none;
 }
 
 .input-box input::placeholder {

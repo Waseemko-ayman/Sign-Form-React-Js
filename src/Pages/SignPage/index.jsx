@@ -27,8 +27,8 @@ class SignPage extends Component {
               <span></span>
             </div>
             <form action="">
-              <Inputs label="Your email" type="email" placeholder="Write your email"/>
-              <Inputs label="Enter your Password*" type="password" placeholder="Write your password"/>
+              <Inputs label="Your email" type="email" placeholder="Write your email" imageHidden/>
+              <Inputs label="Enter your Password*" type="password" placeholder="Write your password" />
               <div className="sign-btn">
                 <Button btnText="Login"/>
                 <p>Don't have an account? <span>Register</span></p>
