@@ -1,4 +1,4 @@
-.signUp-page {
+.signIn-page {
   max-width: 100%;
   width: 1440px;
   height: 100vh;
@@ -6,18 +6,18 @@
   display: flex;
 }
 
-.signUp-page .signUp-info-box {
+.signIn-page .signIn-info-box {
   position: relative;
   width: 642px;
   background-color: #FFF;
 }
 
-.signUp-page .signUp-info-box .logo img {
+.signIn-page .signIn-info-box .logo img {
   max-width: 100%;
   width: 94.365px;
 }
 
-.signUp-page .signUp-info-box .logo span {
+.signIn-page .signIn-info-box .logo span {
   color: #1565D8;
   font-family: Righteous;
   font-size: 72px;
@@ -26,20 +26,20 @@
   line-height: normal;
 }
 
-.signUp-page .signUp-info-box .paragraph span {
+.signIn-page .signIn-info-box .paragraph span {
   color: #BABABA;
 }
 
-.signUp-page .signUp-info-box .paragraph p {
+.signIn-page .signIn-info-box .paragraph p {
   font-style: italic;
 }
 
-.signUp-page .signUp-info-box .paragraph p,
-.signUp-page .signUp-info-box .paragraph h3 {
+.signIn-page .signIn-info-box .paragraph p,
+.signIn-page .signIn-info-box .paragraph h3 {
   color: #696F79;
 }
 
-.signUp-page .signUp-info-box .paragraph img {
+.signIn-page .signIn-info-box .paragraph img {
   max-width: 100%;
   width: 270px;
   margin-right: 0;
@@ -51,7 +51,7 @@
 --------------------------------------------------------------------------------
 */
 
-.signUp-page .signUp-box {
+.signIn-page .signIn-box {
   max-width: 100%;
   width: 100%;
   overflow-y: auto;
@@ -61,7 +61,7 @@
   position: relative;
 }
 
-.signUp-page .signUp-box > div {
+.signIn-page .signIn-box > div {
   position: relative;
   max-width: 100%;
   width: 426px;
@@ -70,12 +70,12 @@
 }
 
 @media (max-width: 1366px) {
-  .signUp-page .signUp-box > div {
+  .signIn-page .signIn-box > div {
     margin-top: 150px;
   }
 }
 
-.signUp-page .signUp-box .title {
+.signIn-page .signIn-box .title {
   max-width: 100%;
   text-align: center;
   padding-bottom: 40px;
@@ -83,7 +83,7 @@
   position: relative;
 }
 
-.signUp-page .signUp-box .title h1 {
+.signIn-page .signIn-box .title h1 {
   color: #000;
   font-size: 42px;
   font-style: normal;
@@ -92,7 +92,7 @@
   margin: 0;
 }
 
-.signUp-page .signUp-box .title p {
+.signIn-page .signIn-box .title p {
   max-width: 100%;
   width: 411px;
   color: #8692A6;
@@ -103,14 +103,14 @@
   margin-top: 12px;
 }
 
-.signUp-page .signUp-box .title ul {
+.signIn-page .signIn-box .title ul {
   list-style: none;
   gap: 16px;
   margin-top: 40px;
   position: relative;
 }
 
-.signUp-page .signUp-box .title ul::before {
+.signIn-page .signIn-box .title ul::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -119,14 +119,14 @@
   z-index: -1;
 }
 
-.signUp-page .signUp-box .title ul,
-.signUp-page .signUp-box .title ul li {
+.signIn-page .signIn-box .title ul,
+.signIn-page .signIn-box .title ul li {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.signUp-page .signUp-box .title ul li {
+.signIn-page .signIn-box .title ul li {
   width: 65px;
   height: 65px;
   border-radius: 6px;
@@ -136,16 +136,16 @@
   transition: 0.5s;
 }
 
-.signUp-page .signUp-box .title ul li:hover {
+.signIn-page .signIn-box .title ul li:hover {
   transform: translateY(-5px);
 }
 
-.signUp-page .signUp-box .title ul li img {
+.signIn-page .signIn-box .title ul li img {
   max-width: 100%;
   width: 30px;
 }
 
-.signUp-page .signUp-box .title span {
+.signIn-page .signIn-box .title span {
   width: 100%;
   height: 1px;
   background-color: #F5F5F5;
@@ -154,7 +154,7 @@
   left: 0;
 }
 
-.signUp-page .signUp-box .title span::after {
+.signIn-page .signIn-box .title span::after {
   content: "Or";
   position: absolute;
   left: 50%;
@@ -170,12 +170,12 @@
   line-height: normal;
 }
 
-.signUp-page .signUp-box form .sign-btn {
+.signIn-page .signIn-box form .sign-btn {
   margin-top: 20px;
   text-align: center;
 }
 
-.signUp-page .signUp-box form .sign-btn p {
+.signIn-page .signIn-box form .sign-btn p {
   color: #696F79;
   font-family: Inter;
   font-size: 16px;
@@ -185,7 +185,7 @@
   margin-top: 27px;
 }
 
-.signUp-page .signUp-box form .sign-btn p span {
+.signIn-page .signIn-box form .sign-btn p span {
   color: #1565D8;
   font-weight: 700;
   cursor: pointer;

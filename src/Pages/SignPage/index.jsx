@@ -8,12 +8,12 @@ import Button from '../../Components/Button';
 class SignPage extends Component {
   render() {
     return (
-      <div className='signUp-page'>
-        <div className="signUp-info-box">
+      <div className='signIn-page'>
+        <div className="signIn-info-box">
           <Logo logoImage="/assets/logo.svg" />
           <Paragraph cornerImage="/assets/joystick.png" />
         </div>
-        <div className="signUp-box">
+        <div className="signIn-box">
           <div>
             <div className="title">
               <h1>Join the game!</h1>
