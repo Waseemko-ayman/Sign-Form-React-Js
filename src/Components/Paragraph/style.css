@@ -11,6 +11,7 @@
 
 .paragraph span {
   color: #00DAF7;
+  font-family: 'Gayathri', sans-serif;
   font-size: 60px;
   font-style: normal;
   font-weight: 700;
@@ -22,6 +23,7 @@
   width: 473px;
   height: 164px;
   color: #FFF;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -34,6 +36,7 @@
 .paragraph h3 {
   color: #FFF;
   font-size: 20px;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 38px;

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  font-family: 'Inter', sans-serif;
 }
 
 .input-box label {

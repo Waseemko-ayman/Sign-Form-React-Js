@@ -19,7 +19,6 @@
 
 .signIn-page .signIn-info-box .logo span {
   color: #1565D8;
-  font-family: Righteous;
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
@@ -80,6 +79,7 @@
   text-align: center;
   padding-bottom: 40px;
   margin-bottom: 35px;
+  font-family: 'Inter', sans-serif;
   position: relative;
 }
 
@@ -177,7 +177,7 @@
 
 .signIn-page .signIn-box form .sign-btn p {
   color: #696F79;
-  font-family: Inter;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
