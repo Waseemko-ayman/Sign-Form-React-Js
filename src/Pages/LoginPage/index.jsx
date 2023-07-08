@@ -10,7 +10,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div className='login-page'>
-        <div className="info-box">
+        <div className="login-info-box">
           <Logo logoImage="/assets/white-logo.svg"/>
           <Paragraph cornerImage="/assets/corner-image.svg"/>
         </div>

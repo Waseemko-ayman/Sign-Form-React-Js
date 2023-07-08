@@ -6,17 +6,16 @@
   display: flex;
 }
 
-.login-page .info-box {
+.login-page .login-info-box {
   position: relative;
   width: 642px;
-  height: 100vh;
   background-image: url("../../../public/assets/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.login-page .info-box::before {
+.login-page .login-info-box::before {
   content: "";
   position: absolute;
   left: 0;
@@ -50,7 +49,6 @@
   cursor: pointer;
   margin: 75px 0 99px 77px;
 }
-
 
 .login-page .login-box .back-btn i {
   font-size: 20px;
