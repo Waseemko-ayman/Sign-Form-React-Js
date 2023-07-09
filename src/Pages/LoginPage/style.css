@@ -104,11 +104,22 @@
   margin-top: 10px;
 }
 
+.login-page .login-box form .error {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: red;
+}
+
 .login-page .login .checkbox {
+  margin-bottom: 36px;
+  margin-top: 20px;
+}
+
+.login-page .login .checkbox > div {
   display: flex;
   align-items: center;
   gap: 11px;
-  margin-bottom: 39px;
+  margin-bottom: 10px;
 }
 
 .login-page .login .checkbox input {

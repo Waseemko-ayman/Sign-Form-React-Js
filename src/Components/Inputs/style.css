@@ -11,13 +11,14 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-top: 20px;
 }
 
 .input-box .input-div {
   padding: 23px 30px 24px;
   border-radius: 6px;
   border: 1px solid #8692A6;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
