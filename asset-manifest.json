@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Sign-Form-React-Js/static/css/main.a9d2b92c.css",
+    "main.js": "/Sign-Form-React-Js/static/js/main.1b566550.js",
+    "static/media/background.png": "/Sign-Form-React-Js/static/media/background.b0c6d4d2b30e3f519b6a.png",
+    "index.html": "/Sign-Form-React-Js/index.html",
+    "main.a9d2b92c.css.map": "/Sign-Form-React-Js/static/css/main.a9d2b92c.css.map",
+    "main.1b566550.js.map": "/Sign-Form-React-Js/static/js/main.1b566550.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9d2b92c.css",
+    "static/js/main.1b566550.js"
+  ]
+}
