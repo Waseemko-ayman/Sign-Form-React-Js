@@ -1,12 +1,13 @@
 .paragraph {
-  position: relative;
   margin-top: 80px;
+  position: relative;
+  padding: 0 82px;
 }
 
-.paragraph span,
-.paragraph p,
-.paragraph h3 {
-  margin-left: 82px;
+@media (max-width: 768px) {
+  .paragraph {
+    text-align: center;
+  }
 }
 
 .paragraph span {
@@ -14,12 +15,11 @@
   font-family: 'Gayathri', sans-serif;
   font-size: 96px;
   font-style: normal;
-  margin-right: 532px;
 }
 
 .paragraph p {
+  max-width: 100%;
   width: 473px;
-  height: 164px;
   color: #FFF;
   font-family: 'Inter', sans-serif;
   font-size: 20px;
@@ -28,6 +28,12 @@
   line-height: 38px;
   margin-top: -80px;
   margin-bottom: 59px;
+}
+
+@media (max-width: 768px) {
+  .paragraph p {
+    width: 100%;
+  }
 }
 
 .paragraph h3 {
@@ -45,4 +51,10 @@
   width: 33.5px;
   float: right;
   margin-right: 125px;
+}
+
+@media (max-width: 768px) {
+  .paragraph img {
+    margin: 0;
+  }
 }

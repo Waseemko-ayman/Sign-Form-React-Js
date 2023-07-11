@@ -19,6 +19,7 @@ class LoginPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     const errors = this.validateForm();
     if (Object.keys(errors).length !== 0) {
       this.setState({ errors });
@@ -104,47 +105,47 @@ class LoginPage extends Component {
               </div>
               <form action="" onSubmit={this.handleSubmit}>
                 <Inputs 
+                  type="text" 
+                  label="Username*" 
+                  placeholder="Enter username" 
                   value={this.state.username} 
                   onChange={this.handleInputChange} 
-                  label="Username*" 
-                  type="text" 
-                  placeholder="Enter username" 
                   imageHidden 
                 />
                 {this.state.errors.username && <p className="error">{this.state.errors.username}</p>}
                 <Inputs 
+                  type="email" 
+                  label="Email address*" 
+                  placeholder="Enter email address" 
                   value={this.state.email} 
                   onChange={this.handleInputChange} 
-                  label="Email address*" 
-                  type="email" 
-                  placeholder="Enter email address" 
                   imageHidden 
                 />
                 {this.state.errors.email && <p className="error">{this.state.errors.email}</p>}
                 <Inputs 
+                  type="text" 
+                  label="Phone*" 
+                  placeholder="Enter phone" 
                   value={this.state.phone} 
                   onChange={this.handleInputChange} 
-                  label="Phone*" 
-                  type="text" 
-                  placeholder="Enter phone" 
                   imageHidden 
                 />
                 {this.state.errors.phone && <p className="error">{this.state.errors.phone}</p>}
                 <Inputs 
+                  type="password" 
+                  label="Create Password*" 
+                  placeholder="Password" 
                   value={this.state.password} 
                   onChange={this.handleInputChange} 
-                  label="Create Password*" 
-                  type="password" 
-                  placeholder="Password" 
                   imageSrc="/assets/eye.svg" 
                 />
                 {this.state.errors.password && <p className="error">{this.state.errors.password}</p>}
                 <Inputs 
+                  type="password" 
+                  label="Repeat password*" 
+                  placeholder="Repeat password" 
                   value={this.state.repeatPassword} 
                   onChange={this.handleInputChange} 
-                  label="Repeat password*" 
-                  type="password" 
-                  placeholder="Repeat password" 
                   imageSrc="/assets/eye.svg" 
                 />
                 {this.state.errors.repeatPassword && <p className="error">{this.state.errors.repeatPassword}</p>}

@@ -5,6 +5,13 @@
   padding: 61px 20px 0 89px;
 }
 
+@media (max-width: 768px) {
+  .logo {
+    justify-content: center;
+    padding: 60px 0 0;
+  }
+}
+
 .logo img {
   max-width: 100%;
   width: 52.222px;
