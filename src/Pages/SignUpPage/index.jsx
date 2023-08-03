@@ -208,17 +208,17 @@ class SignUpPage extends Component {
 
   render() {
     return (
-      <div className='login-page'>
-        <div className="login-info-box">
+      <div className='signUp-page'>
+        <div className="signUp-info-box">
           <Logo logoImage="/assets/white-logo.svg"/>
           <Paragraph cornerImage="/assets/corner-image.svg"/>
         </div>
-        <div className="login-box">
+        <div className="signUp-box">
           <button className="back-btn">
             <i class="fa-solid fa-angle-left"></i>
             <span onClick={this.props.togglePage}>Back</span>
           </button>
-          <div className="login">
+          <div className="signUp">
             <div>
               <div className="title">
                 <h1>Register Individual Account!</h1>

@@ -7,12 +7,12 @@ import Button from '../../Components/Button';
 
 const LogInPage = ({ togglePage }) => {
   return (
-    <div className='signIn-page'>
-      <div className="signIn-info-box">
+    <div className='logIn-page'>
+      <div className="logIn-info-box">
         <Logo logoImage="/assets/logo.svg" />
         <Paragraph cornerImage="/assets/joystick.png" />
       </div>
-      <div className="signIn-box">
+      <div className="logIn-box">
         <div>
           <div className="title">
             <h1>Join the game!</h1>

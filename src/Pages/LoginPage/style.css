@@ -1,4 +1,4 @@
-.signIn-page {
+.logIn-page {
   max-width: 100%;
   width: 1440px;
   height: 100vh;
@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 1115px) {
-  .signIn-page {
+  .logIn-page {
     flex-direction: column;
     justify-content: center;
     width: 100%;
@@ -15,30 +15,30 @@
   }
 }
 
-.signIn-page .signIn-info-box {
+.logIn-page .logIn-info-box {
   position: relative;
   width: 642px;
   background-color: #FFF;
 }
 
 @media (max-width: 1115px) {
-  .signIn-page .signIn-info-box {
+  .logIn-page .logIn-info-box {
     width: 100%;
   }
 }
 
-.signIn-page .signIn-info-box .logo img {
+.logIn-page .logIn-info-box .logo img {
   max-width: 100%;
   width: 94.365px;
 }
 
 @media (max-width: 768px) {
-  .signIn-page .signIn-info-box .logo img {
+  .logIn-page .logIn-info-box .logo img {
     width: 80px;
   }
 }
 
-.signIn-page .signIn-info-box .logo span {
+.logIn-page .logIn-info-box .logo span {
   color: #1565D8;
   font-size: 72px;
   font-style: normal;
@@ -47,25 +47,25 @@
 }
 
 @media (max-width: 768px) {
-  .signIn-page .signIn-info-box .logo span {
+  .logIn-page .logIn-info-box .logo span {
     font-size: 60px;
   }
 }
 
-.signIn-page .signIn-info-box .paragraph span {
+.logIn-page .logIn-info-box .paragraph span {
   color: #BABABA;
 }
 
-.signIn-page .signIn-info-box .paragraph p {
+.logIn-page .logIn-info-box .paragraph p {
   font-style: italic;
 }
 
-.signIn-page .signIn-info-box .paragraph p,
-.signIn-page .signIn-info-box .paragraph h3 {
+.logIn-page .logIn-info-box .paragraph p,
+.logIn-page .logIn-info-box .paragraph h3 {
   color: #696F79;
 }
 
-.signIn-page .signIn-info-box .paragraph img {
+.logIn-page .logIn-info-box .paragraph img {
   max-width: 100%;
   width: 270px;
   margin-right: 0;
@@ -73,7 +73,7 @@
 }
 
 @media (max-width: 768px) {
-  .signIn-page .signIn-info-box .paragraph img {
+  .logIn-page .logIn-info-box .paragraph img {
     margin: 0;
   }
 }
@@ -83,7 +83,7 @@
 --------------------------------------------------------------------------------
 */
 
-.signIn-page .signIn-box {
+.logIn-page .logIn-box {
   max-width: 100%;
   width: 100%;
   display: flex;
@@ -93,12 +93,12 @@
 }
 
 @media (max-width: 768px) {
-  .signIn-page .signIn-box {
+  .logIn-page .logIn-box {
     padding: 0 20px 30px;
   }
 }
 
-.signIn-page .signIn-box > div {
+.logIn-page .logIn-box > div {
   position: relative;
   max-width: 100%;
   width: 426px;
@@ -107,18 +107,18 @@
 }
 
 @media (max-width: 768px) {
-  .signIn-page .signIn-box > div {
+  .logIn-page .logIn-box > div {
     margin-top: 20px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1366px) {
-  .signIn-page .signIn-box > div {
+  .logIn-page .logIn-box > div {
     margin-top: 150px;
   }
 }
 
-.signIn-page .signIn-box .title {
+.logIn-page .logIn-box .title {
   max-width: 100%;
   text-align: center;
   padding-bottom: 40px;
@@ -127,7 +127,7 @@
   position: relative;
 }
 
-.signIn-page .signIn-box .title h1 {
+.logIn-page .logIn-box .title h1 {
   color: #000;
   font-size: 42px;
   font-style: normal;
@@ -136,7 +136,7 @@
   margin: 0;
 }
 
-.signIn-page .signIn-box .title p {
+.logIn-page .logIn-box .title p {
   max-width: 100%;
   width: 411px;
   color: #8692A6;
@@ -147,14 +147,14 @@
   margin-top: 12px;
 }
 
-.signIn-page .signIn-box .title ul {
+.logIn-page .logIn-box .title ul {
   list-style: none;
   gap: 16px;
   margin-top: 40px;
   position: relative;
 }
 
-.signIn-page .signIn-box .title ul::before {
+.logIn-page .logIn-box .title ul::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -163,14 +163,14 @@
   z-index: -1;
 }
 
-.signIn-page .signIn-box .title ul,
-.signIn-page .signIn-box .title ul li {
+.logIn-page .logIn-box .title ul,
+.logIn-page .logIn-box .title ul li {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.signIn-page .signIn-box .title ul li {
+.logIn-page .logIn-box .title ul li {
   width: 65px;
   height: 65px;
   border-radius: 6px;
@@ -180,16 +180,16 @@
   transition: 0.5s;
 }
 
-.signIn-page .signIn-box .title ul li:hover {
+.logIn-page .logIn-box .title ul li:hover {
   transform: translateY(-5px);
 }
 
-.signIn-page .signIn-box .title ul li img {
+.logIn-page .logIn-box .title ul li img {
   max-width: 100%;
   width: 30px;
 }
 
-.signIn-page .signIn-box .title span {
+.logIn-page .logIn-box .title span {
   width: 100%;
   height: 1px;
   background-color: #F5F5F5;
@@ -198,7 +198,7 @@
   left: 0;
 }
 
-.signIn-page .signIn-box .title span::after {
+.logIn-page .logIn-box .title span::after {
   content: "Or";
   position: absolute;
   left: 50%;
@@ -214,12 +214,12 @@
   line-height: normal;
 }
 
-.signIn-page .signIn-box form .sign-btn {
+.logIn-page .logIn-box form .sign-btn {
   margin-top: 20px;
   text-align: center;
 }
 
-.signIn-page .signIn-box form .sign-btn p {
+.logIn-page .logIn-box form .sign-btn p {
   color: #696F79;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -229,7 +229,7 @@
   margin-top: 27px;
 }
 
-.signIn-page .signIn-box form .sign-btn p span {
+.logIn-page .logIn-box form .sign-btn p span {
   color: #1565D8;
   font-weight: 700;
   cursor: pointer;
