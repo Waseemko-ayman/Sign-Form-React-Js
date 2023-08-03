@@ -1,29 +1,23 @@
-import React, { Component } from 'react'
-import LoginPage from "../LogInPage";
-import SignPage from "../SignInPage";
+import React, { useState } from 'react'
+import LogInPage from "../LogInPage";
+import SignUpPage from "../SignUpPage";
 
-class GamersPage extends Component {
-  state = {
-    isSignedIn: true
+const GamersPage = () => {
+  const [isSignedIn, setIsSignedIn] = useState(true);
+
+  const togglePage = () => {
+    setIsSignedIn(!isSignedIn);
   }
 
-  togglePage = () => {
-    this.setState((prevState) => ({
-      isSignedIn: !prevState.isSignedIn
-    }))
-  }
-
-  render() {
-    return (
-      <div>
-        {
-          this.state.isSignedIn 
-          ? (<SignPage togglePage={this.togglePage} />) 
-          : (<LoginPage togglePage={this.togglePage} />)
-        }
-      </div>
-    )
-  }
+  return (
+    <div>
+      {
+        isSignedIn 
+        ? (<SignUpPage togglePage={togglePage} />) 
+        : (<LogInPage togglePage={togglePage} />)
+      }
+    </div>
+  )
 }
 
-export default GamersPage;
+export default GamersPage
