@@ -13,8 +13,8 @@ const GamersPage = () => {
     <div>
       {
         isSignedIn 
-        ? (<SignUpPage togglePage={togglePage} />) 
-        : (<LogInPage togglePage={togglePage} />)
+        ? (<LogInPage togglePage={togglePage} />)
+        : (<SignUpPage togglePage={togglePage} />) 
       }
     </div>
   )
