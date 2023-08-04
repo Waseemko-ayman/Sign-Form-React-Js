@@ -1,4 +1,11 @@
 .main__layout {
   display: flex;
-  gap: 45px;
+}
+
+.main__layout .left-side {
+  flex: 1;
+}
+
+.main__layout .right-side {
+  flex: 8;
 }

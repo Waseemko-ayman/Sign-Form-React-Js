@@ -1,0 +1,64 @@
+.sidebar__games {
+  max-width: 100%;
+  width: 113px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  padding: 15px 0;
+  position: relative;
+}
+
+.sidebar__games::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  width: 9px;
+  height: calc(100% - 70px);
+  border-radius: 38px;
+  background: #222;
+  box-shadow: 2px 4px 4px 0px rgba(255, 255, 255, 0.57) inset;
+}
+
+.sidebar__games ul {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  list-style: none;
+}
+
+.sidebar__games ul li button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.sidebar__games ul li button i {
+  color: white;
+  font-size: 25px;
+}
+
+.sidebar__games .theme {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 17px 9px;
+  border-radius: 60px;
+  background: #515151;
+}
+
+.sidebar__games .theme button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.sidebar__games .theme button i {
+  color: white;
+  font-size: 20px;
+}

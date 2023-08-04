@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { createContext, useContext, useState } from 'react'
+import { ROLES } from '../Constants';
 
-const AuthProvider = () => {
+const AuthContext = createContext(null);
+export const useAuthContext = () => useContext(AuthContext);
+
+const AuthProvider = ({ children }) => {
+  const [role, setRole] = useState(ROLES.GUEST);
+
   return (
-    <div>AuthProvider</div>
+    <AuthContext.Provider value={{ role }}>
+      { children }
+    </AuthContext.Provider>
   )
 }
 
-export default AuthProvider
+export default AuthProvider;

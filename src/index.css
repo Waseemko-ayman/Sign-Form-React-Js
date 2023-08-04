@@ -5,5 +5,7 @@
 }
 
 body {
-  background-color: #FFF;
+  border-radius: 40px;
+  background: linear-gradient(134deg, #222 0%, #222 100%);
+  height: 100vh;
 }
