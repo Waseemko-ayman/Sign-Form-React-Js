@@ -13,23 +13,6 @@ const ContentsSection = () => {
       {LAST_PLAYED_DATA.map(({ backGround, description }) => (
         <LastPlayed  srcImage={backGround} description={description} />
       ))}
-
-      {/* <div className="box">
-        <img src={HogwartsLegacy} alt="" />
-        <p>Hogwarts Legacy 50%</p>
-      </div>
-      <div className="box">
-        <img src={GodOfWar} alt="" />
-        <p>God Of War: Ragnarök 72.5%</p>
-      </div>
-      <div className="box">
-        <img src={CrashBandicoot} alt="" />
-        <p>Crash Bandicoot N. Sane Trilogy 34%</p>
-      </div>
-      <div className="box">
-        <img src={DyingLight2} alt="" />
-        <p>Dying Light 2 Stay Human 100%</p>
-      </div> */}
     </div>
     <div className="most__recent__trophy">
       <Title textTitle="most recent trophy" />
