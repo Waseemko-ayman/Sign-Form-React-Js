@@ -1,12 +1,12 @@
 import { Navigate } from "react-router-dom";
-import HomePage from "../../Pages/HomePage";
-import ProfilePage from "../../Pages/ProfilePage";
-import AdminGuard from "../Guards/AdminGuard";
-import UserGuard from "../Guards/UserGuard";
+import HomePage from "../Pages/HomePage";
+import ProfilePage from "../Pages/ProfilePage";
+import AdminGuard from "../Components/Guards/AdminGuard";
+// import UserGuard from "../Components/Guards/UserGuard";
 import { PATHS } from "./paths";
-import LogInPage from "../../Pages/LoginPage";
-import SignUpPage from "../../Pages/SignUpPage";
-import GuestGuards from "../Guards/GuestGuards";
+import LogInPage from "../Pages/LoginPage";
+import SignUpPage from "../Pages/SignUpPage";
+import GuestGuards from "../Components/Guards/GuestGuards";
 
 export const adminPages = [
   {

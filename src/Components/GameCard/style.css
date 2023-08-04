@@ -1,7 +1,7 @@
 .card {
   width: 588px;
   height: 310px;
-  /* background-image: url("../../assets/GameCard-1.png"); */
+  background-color: goldenrod;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

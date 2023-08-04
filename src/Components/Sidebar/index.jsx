@@ -1,8 +1,8 @@
 import React from 'react'
 import "./style.css"
 import { NavLink } from 'react-router-dom'
-import { useAuthContext } from '../Context/AuthContext'
-import { ROLES } from '../Constants'
+import { useAuthContext } from '../../Context/AuthContext'
+import { ROLES } from '../../Constants'
 
 const Sidebar = () => {
   const {role} = useAuthContext()

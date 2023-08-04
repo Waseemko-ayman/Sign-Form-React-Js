@@ -1,0 +1,18 @@
+.game__cards {
+  display: flex;
+  gap: 28px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  margin-top: 50px;
+}
+
+.game__cards::-webkit-scrollbar {
+  width: 15px;
+  height: 12px;
+}
+
+.game__cards::-webkit-scrollbar-thumb {
+  background: #A08040;
+  border-radius: 20px;
+}
