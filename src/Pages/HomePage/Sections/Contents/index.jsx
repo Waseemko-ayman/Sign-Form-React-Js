@@ -3,6 +3,7 @@ import "./style.css";
 import Title from '../../../../Components/Title';
 import LastPlayed from '../../../../Components/LastPlayed';
 import { LAST_PLAYED_DATA } from '../../../../mock/LastPlayed';
+import friendsImage from "../../../../assets/friendsImage.png"
 
 const ContentsSection = () => {
   return (
@@ -26,9 +27,10 @@ const ContentsSection = () => {
     </div>
     <div className="friends">
       <Title textTitle="friends" />
+      <img src={friendsImage} alt="cycles" />
     </div>
   </div>
   )
 }
 
-export default ContentsSection
+export default ContentsSection;
