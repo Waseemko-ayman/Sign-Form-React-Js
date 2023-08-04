@@ -1,5 +1,6 @@
 .main__layout {
   display: flex;
+  gap: 45px;
 }
 
 .main__layout .left-side {
@@ -7,5 +8,8 @@
 }
 
 .main__layout .right-side {
-  flex: 8;
+  flex: 11;
+  /* background-color: red; */
+  overflow-y: auto;
+  position: relative;
 }

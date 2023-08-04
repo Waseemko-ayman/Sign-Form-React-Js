@@ -6,15 +6,17 @@
   justify-content: space-between;
   flex-direction: column;
   height: 100vh;
-  padding: 15px 0;
-  position: relative;
+  padding: 30px 0;
+  position: sticky;
+  left: 0;
+  top: 0;
 }
 
 .sidebar__games::after {
   content: "";
   position: absolute;
   right: 0;
-  bottom: 15px;
+  bottom: 30px;
   width: 9px;
   height: calc(100% - 70px);
   border-radius: 38px;

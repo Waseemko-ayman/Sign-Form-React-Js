@@ -3,7 +3,6 @@ import "./style.css"
 import { NavLink } from 'react-router-dom'
 import { useAuthContext } from '../Context/AuthContext'
 import { ROLES } from '../Constants'
-import { PATHS } from '../router/paths'
 
 const Sidebar = () => {
   const {role} = useAuthContext()
@@ -39,9 +38,6 @@ const Sidebar = () => {
             <button><i class="fa-solid fa-right-to-bracket"></i></button>
           </li>
           <li>
-            {/* <NavLink>
-              {({ isActive }) => (isActive ? <u>Signup</u> : "Signup")}
-            </NavLink> */}
             <button><i class="fa-solid fa-user-plus"></i></button>
           </li>
         </ul> 
