@@ -30,21 +30,22 @@ const Sidebar = () => {
         </defs>
       </svg>
       {/* <img src="/assets/gameButton.svg" alt="game button" /> */}
-      {role === ROLES.GUEST && (
+      {role === ROLES.GUEST ? (
         <ul>
           <li>
-            <NavLink>
+            {/* <NavLink>
             {({ isActive }) => (isActive ? <u>Login</u> : "Login")}
-            </NavLink>
+            </NavLink> */}
+            <button><i class="fa-solid fa-right-to-bracket"></i></button>
           </li>
           <li>
-            <NavLink>
+            {/* <NavLink>
               {({ isActive }) => (isActive ? <u>Signup</u> : "Signup")}
-            </NavLink>
+            </NavLink> */}
+            <button><i class="fa-solid fa-user-plus"></i></button>
           </li>
         </ul> 
-      )}
-      {role === ROLES.USER ? (
+      ) : role === ROLES.USER ? (
         <ul>
           <NavLink>
             <li>
@@ -66,6 +67,7 @@ const Sidebar = () => {
           </NavLink>
         </ul>
       )}
+
       <div className="theme">
         <button><i class="fa-regular fa-moon"></i></button>
         <button><i class="fa-regular fa-sun"></i></button>
