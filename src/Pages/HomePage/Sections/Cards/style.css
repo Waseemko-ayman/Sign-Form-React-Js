@@ -1,9 +1,11 @@
 .game__cards {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   gap: 28px;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 20px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  padding: 0 20px 20px 0;
   margin-top: 50px;
 }
 
@@ -13,6 +15,6 @@
 }
 
 .game__cards::-webkit-scrollbar-thumb {
-  background: #A08040;
+  box-shadow: 2px 4px 4px 0px rgba(255, 255, 255, 0.57) inset;
   border-radius: 20px;
 }

@@ -2,12 +2,16 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 50px 0;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 50px 20px;
 }
 
-.last__played {
-  padding-left: 8px;
-  /* background-color: red; */
+@media (max-width: 1145px) {
+  .content {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 .content .last__played .box {
@@ -63,6 +67,13 @@
   width: 678px;
   height: 358px;
   position: relative;
+}
+
+@media (max-width: 860px) {
+  .most__recent__trophy .image {
+    width: 615px;
+    height: 325px;
+  }
 }
 
 .most__recent__trophy .image .text {
