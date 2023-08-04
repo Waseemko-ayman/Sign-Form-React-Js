@@ -1,9 +1,14 @@
-import GamersPage from "./Pages/GamersPage";
+import MainLayout from "./Components/MainLayout";
+import HomePage from "./Pages/HomePage";
+// import GamersPage from "./Pages/GamersPage";
 
 function App() {
   return (
     <div>
-      <GamersPage />
+      {/* <GamersPage /> */}
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
     </div>
   );
 }
