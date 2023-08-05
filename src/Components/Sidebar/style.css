@@ -20,8 +20,9 @@
   width: 9px;
   height: calc(100% - 80px);
   border-radius: 38px;
-  background: #222;
-  box-shadow: 2px 4px 4px 0px rgba(255, 255, 255, 0.57) inset;
+  background: var(--seconde-color);
+  box-shadow: 2px 4px 4px 0px var(--forth-color) inset;
+
 }
 
 .sidebar__games ul {
@@ -39,7 +40,7 @@
 }
 
 .sidebar__games ul li button i {
-  color: white;
+  color: var(--first-color);
   font-size: 25px;
 }
 
@@ -61,6 +62,6 @@
 }
 
 .sidebar__games .theme button i {
-  color: white;
+  color: var(--first-color);
   font-size: 20px;
 }

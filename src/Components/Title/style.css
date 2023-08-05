@@ -1,5 +1,5 @@
 h2 {
-  color: #D8D8D8;
+  color: var(--first-color);
   font-family: Gilroy, sans-serif;
   font-size: 28px;
   font-style: normal;

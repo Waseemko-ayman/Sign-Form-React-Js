@@ -18,7 +18,7 @@
 }
 
 .logo span {
-  color: #FFF;
+  color: var(--first-color);
   font-family: 'Righteous', cursive;
   font-size: 16px;
   font-style: normal;

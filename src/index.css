@@ -1,3 +1,29 @@
+:root {
+  --first-color: white;
+  --seconde-color: #222;
+  --third-color: #515151;
+  --forth-color: rgba(255, 255, 255, 0.57);
+  --background-color: linear-gradient(134deg, #222 0%, #222 100%);
+}
+
+[data-theme='light'] {
+  --first-color: #222;
+  --seconde-color: white;
+  --third-color: white;
+  --forth-color: rgba(0, 0, 0, 0.25);
+  --background-color: white;
+}
+
+/* .light {
+  color: linear-gradient(134deg, #222 0%, #222 100%) !important;
+  background-color: white !important;
+}
+
+.dark {
+  color: white !important;
+  background: linear-gradient(134deg, #222 0%, #222 100%) !important;
+} */
+
 * {
   padding: 0;
   margin: 0;

@@ -195,7 +195,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFF;
+  background-color: var(--first-color);
   padding: 0 20px;
   color: #BABABA;
   font-size: 17px;
@@ -206,6 +206,6 @@
 
 .signUp-page .signUp .register + button {
   color: black;
-  background-color: #FFF;
+  background-color: var(--first-color);
   box-shadow: 0 3px 13px #ddd;
 }

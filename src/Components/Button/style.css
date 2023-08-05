@@ -2,7 +2,7 @@
   max-width: 100%;
   width: 100%;
   padding: 23px 0;
-  color: #FFF;
+  color: var(--first-color);
   background: #1565D8;
   border: none;
   outline: none;

@@ -20,7 +20,7 @@
 .paragraph p {
   max-width: 100%;
   width: 473px;
-  color: #FFF;
+  color: var(--first-color);
   font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -37,7 +37,7 @@
 }
 
 .paragraph h3 {
-  color: #FFF;
+  color: var(--first-color);
   font-size: 20px;
   font-family: 'Inter', sans-serif;
   font-style: normal;

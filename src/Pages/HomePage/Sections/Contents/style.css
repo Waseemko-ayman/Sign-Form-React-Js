@@ -39,20 +39,21 @@
 .most__recent__trophy .image .text h3,
 .most__recent__trophy .image .text p {
   color: white;
-  font-family: 'Gayathri', sans-serif;
+  font-family: Gilroy, sans-serif;
   font-style: normal;
-  font-weight: 800;
+
   line-height: normal;
 }
 
 .most__recent__trophy .image .text h3 {
   margin: 0;
-  font-size: 25px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
 .most__recent__trophy .image .text p {
-  font-size: 19px;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .most__recent__trophy .image .trophy {

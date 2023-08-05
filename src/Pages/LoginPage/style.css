@@ -18,7 +18,7 @@
 .logIn-page .logIn-info-box {
   position: relative;
   width: 642px;
-  background-color: #FFF;
+  background-color: var(--first-color);
 }
 
 @media (max-width: 1115px) {
@@ -205,7 +205,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   color: #BABABA;
-  background-color: #FFF;
+  background-color: var(--first-color);
   padding: 0 20px;
   text-align: center;
   font-size: 12px;
