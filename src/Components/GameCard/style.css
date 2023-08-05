@@ -1,6 +1,6 @@
 .card {
-  width: 588px;
-  height: 310px;
+  width: 480px;
+  height: 222px;
   background-color: goldenrod;
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,14 +8,18 @@
   display: flex;
   align-items: center;
   border-radius: 60px;
-  overflow: hidden;
   position: relative;
 }
 
 .card > img {
   max-width: 100%;
-  width: 320px;
+  width: 230px;
+  border-radius: 0 0 0 60px;
   transition: transform .3s;
+}
+
+.card:hover > img {
+  transform: scale(1.1) translate(9px, -8px);
 }
 
 .card .text {
@@ -25,27 +29,23 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  gap: 100px;
-  /* background-color: red; */
+  gap: 50px;
 }
 
 .card .text img {
+  max-width: 100%;
+  width: 250px;
   filter: drop-shadow(0 0 20px #FFF);
-  /* background-color: gold; */
 }
 
 .card .text p {
   color: #D8D8D8;
-  width: 450px;
+  width: 400px;
   text-align: right;
   font-family: Gilroy, sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
   padding-right: 10px;
-}
-
-.card:hover > img {
-  transform: scale(1.2) translate(20px, -20px);
 }

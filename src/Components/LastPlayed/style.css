@@ -1,6 +1,6 @@
 .box {
-  width: 378px;
-  height: 60px;
+  width: 330px;
+  height: 50px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -10,12 +10,12 @@
 }
 
 .box:not(:last-child) {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .box img {
   max-width: 100%;
-  width: 70px;
+  width: 55px;
   border-radius: 50%;
   margin-left: -5px;
   transition: box-shadow .3s;
@@ -37,7 +37,7 @@
 .box p {
   color: #D8D8D8;
   font-family: 'Gayathri', sans-serif;
-  font-size: 22px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;

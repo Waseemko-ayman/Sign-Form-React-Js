@@ -4,6 +4,8 @@ import Title from '../../../../Components/Title';
 import LastPlayed from '../../../../Components/LastPlayed';
 import { LAST_PLAYED_DATA } from '../../../../mock/LastPlayed';
 import friendsImage from "../../../../assets/friendsImage.png"
+import Trophy from "../../../../assets/trophy.png"
+import GreenCycle from "../../../../assets/greenCycle.png"
 
 const ContentsSection = () => {
   return (
@@ -15,13 +17,17 @@ const ContentsSection = () => {
         <LastPlayed  srcImage={backGround} description={description} />
       ))}
     </div>
+
     <div className="most__recent__trophy">
       <Title textTitle="most recent trophy" />
-      
       <div className="image">
         <div className="text">
           <h3>assassin's creed odyssey</h3>
           <p>last played: 34 hours ago</p>
+        </div>
+        <div className="trophy">
+          <img src={Trophy} alt="trophy" />
+          <img src={GreenCycle} alt="trophy" />
         </div>
       </div>
     </div>
