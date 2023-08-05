@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
   const [role, setRole] = useState(ROLES.ADMIN);
 
   return (
-    <AuthContext.Provider value={{ role }}>
+    <AuthContext.Provider value={{ role, setRole }}>
       { children }
     </AuthContext.Provider>
   )

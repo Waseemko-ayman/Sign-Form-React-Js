@@ -27,7 +27,7 @@ export const adminPages = [
       </GuestGuards>
     )
   },
-  ...GuestRoutes,
+  // ...GuestRoutes,
 ];
 
 export const userPages = [
@@ -39,7 +39,7 @@ export const userPages = [
       </GuestGuards>
     )
   },
-  ...GuestRoutes,
+  // ...GuestRoutes,
 ];
 
 export const authPages = [
@@ -73,8 +73,10 @@ export const GuestRoutes = [
   ...authPages,
 ];
 
-
 export const routers = [
+  ...adminPages,
+  ...userPages,
+  ...GuestRoutes,
   {
     path: PATHS.ERRORS.NOT_FOUND,
     element: <h1>Page Not Found</h1>,

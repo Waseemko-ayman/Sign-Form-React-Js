@@ -18,7 +18,7 @@
 .signUp-page .signUp-info-box {
   position: relative;
   width: 642px;
-  background-image: url("../../../public/assets/background.png");
+  /* background-image: url("../../../public/assets/background.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

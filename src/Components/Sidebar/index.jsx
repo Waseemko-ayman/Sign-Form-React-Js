@@ -6,7 +6,7 @@ import { ROLES, THEMES } from "../../Constants";
 import { useThemeContext } from "../../Context/ThemeContext";
 
 const Sidebar = () => {
-  const { role } = useAuthContext();
+  const { role, setRole } = useAuthContext();
   const { theme, toggleTheme } = useThemeContext();
   return (
     <sidebar className="sidebar__games">
@@ -82,27 +82,11 @@ const Sidebar = () => {
         </defs>
       </svg>
       {/* <img src="/assets/gameButton.svg" alt="game button" /> */}
-      {role === ROLES.GUEST ? (
-        <ul>
-          <li>
-            {/* <NavLink>
-            {({ isActive }) => (isActive ? <u>Login</u> : "Login")}
-            </NavLink> */}
-            <button>
-              <i className="fa-solid fa-right-to-bracket"></i>
-            </button>
-          </li>
-          <li>
-            <button>
-              <i className="fa-solid fa-user-plus"></i>
-            </button>
-          </li>
-        </ul>
-      ) : role === ROLES.USER ? (
+      {role === ROLES.USER ? (
         <ul>
           <NavLink>
             <li>
-              <button>
+              <button onClick={() => setRole(ROLES.GUEST)}>
                 <i className="fa-solid fa-right-from-bracket"></i>
               </button>
             </li>
@@ -112,7 +96,7 @@ const Sidebar = () => {
         <ul>
           <NavLink>
             <li>
-              <button>
+              <button onClick={() => setRole(ROLES.GUEST)}>
                 <i className="fa-solid fa-right-from-bracket"></i>
               </button>
             </li>

@@ -4,6 +4,8 @@ import Logo from "../../Components/Logo";
 import Paragraph from '../../Components/Paragraph';
 import Inputs from '../../Components/Inputs';
 import Button from '../../Components/Button';
+import WhiteLogo from "../../assets/white-logo.svg"
+import cornerImage from "../../assets/corner-image.svg"
 
 // const SignUpPage = () => {
 //   const [username, setUsername] = useState('');
@@ -210,8 +212,10 @@ class SignUpPage extends Component {
     return (
       <div className='signUp-page'>
         <div className="signUp-info-box">
-          <Logo logoImage="/assets/white-logo.svg"/>
-          <Paragraph cornerImage="/assets/corner-image.svg"/>
+          {/* <Logo logoImage="../assets/white-logo.svg"/> */}
+          <Logo logoImage={WhiteLogo} />
+          {/* <Paragraph cornerImage="/assets/corner-image.svg"/> */}
+          <Paragraph cornerImage={cornerImage} />
         </div>
         <div className="signUp-box">
           <button className="back-btn">
