@@ -32,6 +32,6 @@
 
 body {
   border-radius: 40px;
-  background: linear-gradient(134deg, #222 0%, #222 100%);
+  background: var(--background-color);
   height: 100vh;
 }
