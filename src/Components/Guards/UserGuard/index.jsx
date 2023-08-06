@@ -7,7 +7,8 @@ import { PATHS } from '../../router/paths';
 const UserGuard = () => {
   const { role } = useAuthContext();
   if(role === ROLES.USER) return <Outlet />
-    return <Navigate to={PATHS.HOME} replace={true} />
+  if(role === ROLES.ADMIN) return <Navigate to={PATHS.HOME } replace={true} />
+    return <Navigate to={PATHS.LOGIN} replace={true} />
 }
 
 export default UserGuard;

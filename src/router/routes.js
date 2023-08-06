@@ -2,13 +2,21 @@ import { Navigate } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import ProfilePage from "../Pages/ProfilePage";
 import AdminGuard from "../Components/Guards/AdminGuard";
-// import UserGuard from "../Components/Guards/UserGuard";
+import UserGuard from "../Components/Guards/UserGuard";
 import { PATHS } from "./paths";
-import LogInPage from "../Pages/LoginPage";
 import SignUpPage from "../Pages/SignUpPage";
 import GuestGuards from "../Components/Guards/GuestGuards";
+import LogInPage from "../Pages/LogInPage";
 
 export const adminPages = [
+  {
+    index: true,
+    element: (
+      <GuestGuards>
+        <HomePage />
+      </GuestGuards>
+    )
+  },
   {
     path: PATHS.ADMIN.ROOT,
     element: <AdminGuard />,
@@ -27,10 +35,19 @@ export const adminPages = [
       </GuestGuards>
     )
   },
-  // ...GuestRoutes,
+  // eslint-disable-next-line no-use-before-define
+  ...authPages,
 ];
 
 export const userPages = [
+  {
+    index: true,
+    element: (
+      <GuestGuards>
+        <HomePage />
+      </GuestGuards>
+    )
+  },
   {
     path: PATHS.PROFILE,
     element: (
@@ -39,7 +56,8 @@ export const userPages = [
       </GuestGuards>
     )
   },
-  // ...GuestRoutes,
+  // eslint-disable-next-line no-use-before-define
+  ...authPages,
 ];
 
 export const authPages = [
@@ -62,14 +80,6 @@ export const authPages = [
 ];
 
 export const GuestRoutes = [
-  {
-    index: true,
-    element: (
-      <GuestGuards>
-        <HomePage />
-      </GuestGuards>
-    )
-  },
   ...authPages,
 ];
 
@@ -85,6 +95,4 @@ export const routers = [
     path: '*',
     element: <Navigate to={PATHS.ERRORS.NOT_FOUND} replace={true} />,
   },
-  ...userPages,
-  ...adminPages,
 ];

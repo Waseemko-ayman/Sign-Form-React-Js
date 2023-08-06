@@ -7,16 +7,12 @@ import HomePage from "./Pages/HomePage";
 
 function App() {
   const { role } = useAuthContext();
-  const {theme} = useThemeContext();
+  const { theme } = useThemeContext();
   return (
     <div className="App" data-theme={theme}>
-      {role === ROLES.GUEST ? (
-        <GamersPage />
-      ) : (
-        <MainLayout>
-          <HomePage />
-        </MainLayout> 
-      )}
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
     </div>
   );
 }

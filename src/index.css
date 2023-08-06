@@ -30,8 +30,7 @@
   box-sizing: border-box;
 }
 
-body {
-  border-radius: 40px;
+.App {
   background: var(--background-color);
-  height: 100vh;
+  /* height: 100vh; */
 }

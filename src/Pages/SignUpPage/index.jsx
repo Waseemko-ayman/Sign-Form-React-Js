@@ -292,6 +292,7 @@ class SignUpPage extends Component {
                   <span></span>
                 </div>
                 <button className='register-btn' onClick={this.props.togglePage}>login</button>
+                {/* <button className='register-btn' onClick={() => navigate(<LogInPage />)}>login</button> */}
               </form>
             </div>
           </div>

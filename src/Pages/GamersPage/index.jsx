@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
-import LogInPage from "../LogInPage";
-import SignUpPage from "../SignUpPage";
+// import React, { useState } from 'react'
+// import LogInPage from "../LogInPage";
+// import SignUpPage from "../SignUpPage";
 
-const GamersPage = () => {
-  const [isSignedIn, setIsSignedIn] = useState(true);
+// const GamersPage = () => {
+//   const [isSignedIn, setIsSignedIn] = useState(true);
 
-  const togglePage = () => {
-    setIsSignedIn(!isSignedIn);
-  }
+//   const togglePage = () => {
+//     setIsSignedIn(!isSignedIn);
+//   }
 
-  return (
-    <div>
-      {
-        isSignedIn 
-        ? (<LogInPage togglePage={togglePage} />)
-        : (<SignUpPage togglePage={togglePage} />) 
-      }
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       {
+//         isSignedIn 
+//         ? (<LogInPage togglePage={togglePage} />)
+//         : (<SignUpPage togglePage={togglePage} />) 
+//       }
+//     </div>
+//   )
+// }
 
-export default GamersPage
+// export default GamersPage

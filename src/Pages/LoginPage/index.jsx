@@ -4,8 +4,12 @@ import Logo from "../../Components/Logo";
 import Paragraph from '../../Components/Paragraph';
 import Inputs from '../../Components/Inputs';
 import Button from '../../Components/Button';
+import { useNavigate } from 'react-router-dom';
+import SignUpPage from '../SignUpPage';
 
-const LogInPage = ({ togglePage }) => {
+const LogInPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='logIn-page'>
       <div className="logIn-info-box">
@@ -30,7 +34,7 @@ const LogInPage = ({ togglePage }) => {
             <Inputs label="Enter your Password*" type="password" placeholder="•••••••••" imageSrc="/assets/eye.svg" />
             <div className="sign-btn">
               <Button btnText="Login" />
-              <p>Don't have an account? <span onClick={togglePage}>Register</span></p>
+              <p>Don't have an account? <span onClick={() => navigate(<SignUpPage />)}>Register</span></p>
             </div>
           </form>
         </div>

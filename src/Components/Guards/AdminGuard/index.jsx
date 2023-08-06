@@ -7,7 +7,8 @@ import { useAuthContext } from '../../../Context/AuthContext';
 const AdminGuard = () => {
   const { role } = useAuthContext();
   if(role === ROLES.ADMIN) return <Outlet />
-    return <Navigate to={PATHS.HOME} replace={true} />
+  if(role === ROLES.USER) return <Navigate to={PATHS.HOME } replace={true} />
+    return <Navigate to={PATHS.LOGIN} replace={true} />
 }
 
 export default AdminGuard
