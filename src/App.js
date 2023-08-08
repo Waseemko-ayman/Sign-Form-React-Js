@@ -1,4 +1,6 @@
 import { useThemeContext } from "./Context/ThemeContext";
+import LogInPage from "./Pages/LogInPage";
+import SignUpPage from "./Pages/SignUpPage";
 import Router from "./router";
 
 function App() {
@@ -6,7 +8,8 @@ function App() {
   const { theme } = useThemeContext();
   return (
     <div className="App" data-theme={theme}>
-      <Router />
+      {/* <Router /> */}
+      <LogInPage />
     </div>
   );
 }

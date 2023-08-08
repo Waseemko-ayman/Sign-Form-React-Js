@@ -5,7 +5,7 @@ const AuthContext = createContext(null);
 export const useAuthContext = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
-  const [role, setRole] = useState(ROLES.ADMIN);
+  const [role, setRole] = useState(ROLES.USER);
   // const [user, setUser] = useState(null);
 
   // const data = useAuth();

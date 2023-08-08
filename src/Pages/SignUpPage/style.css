@@ -210,3 +210,12 @@
   background-color: white;
   box-shadow: 0 3px 13px #ddd;
 }
+
+.signUp-page input[type="number"]::-webkit-outer-spin-button,
+.signUp-page input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.signUp-page input[type="number"] {
+  -moz-appearance: textfield;
+}

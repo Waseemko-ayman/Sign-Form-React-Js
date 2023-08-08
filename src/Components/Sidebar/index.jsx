@@ -85,7 +85,6 @@ const Sidebar = () => {
           </filter>
         </defs>
       </svg>
-      {/* <img src="/assets/gameButton.svg" alt="game button" /> */}
       {role === ROLES.USER ? (
         <ul>
           <NavLink>

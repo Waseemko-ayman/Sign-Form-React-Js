@@ -23,17 +23,52 @@ const LogInPage = () => {
     password: "",
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // login(formData);
-  };
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = ({ target: { value, name } }) =>
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    // setFormData((prevData) => ({
+    //   ...prevData,
+    //   [name]: value,
+    // }));
+  setFormData((prev) => ({ ...prev, [name]: value }));
 
-  const hadnleShow = () => {
-    setShow(!show);
-  }
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // login(formData);
+
+    const validationErrors = {};
+
+    // Validate Email
+    if (formData.email.trim() === '') {
+      validationErrors.email = 'Email is required';
+    } else if (!isValidEmail(formData.email)) {
+      validationErrors.email = 'Invalid email format';
+    }
+
+    // Validate password
+    if (formData.password.trim() === '') {
+      validationErrors.password = 'Password is required';
+    } else if (formData.password.length > 6) {
+      validationErrors.password = 'Password must be at least 6 characters long';
+    }
+
+    // Set the validation errors
+    setErrors(validationErrors);
+
+    // Submit the form if there are no validation errors
+    if (Object.keys(validationErrors).length === 0) {
+      // Perform form submission logic here
+      console.log('Form submitted successfully');
+    }
+  };
+
+  // const hadnleShow = () => {
+  //   setShow(!show);
+  // }
 
   return (
     <div className="logIn-page">
@@ -72,6 +107,7 @@ const LogInPage = () => {
               imageHidden
               required
             />
+            {errors.email && <p className="error">{errors.email}</p>}
             <Inputs
               label="Enter your Password*"
               type={show ? "text" : "password"}
@@ -81,6 +117,7 @@ const LogInPage = () => {
               imageSrc={show ? EyeImg : EyeImg}
               required
             />
+            {errors.password && <p className="error">{errors.password}</p>}
             <div className="sign-btn">
               <Button btnText={isLoading ? "Loading..." : "Login"} />
               <p>

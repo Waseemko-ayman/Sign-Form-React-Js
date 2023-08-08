@@ -235,3 +235,9 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+.logIn-page .logIn-box form .error {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: red;
+}

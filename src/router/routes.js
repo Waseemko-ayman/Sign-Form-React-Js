@@ -29,40 +29,6 @@ export const authPages = [
   },
 ];
 
-export const adminPages = [
-  {
-    path: PATHS.ADMIN.ROOT,
-    element: <AdminGuard />,
-    children: [
-      {
-        index: true,
-        element: (
-          <MainLayout>
-            <HomePage />
-          </MainLayout>
-        ),
-      },
-      {
-        path: PATHS.ADMIN.PROFILE,
-        element: (
-          <MainLayout>
-            <ProfilePage />
-          </MainLayout>
-        ),
-      },
-      {
-        path: PATHS.ADMIN.USERSLIST,
-        element: (
-          <MainLayout>
-            <UsersListPage />
-          </MainLayout>
-        ),
-      },
-    ],
-  },
-  ...authPages,
-];
-
 export const userPages = [
   {
     path: PATHS.USER.ROOT,
@@ -84,17 +50,59 @@ export const userPages = [
           </MainLayout>
         ),
       },
+      {
+        path: PATHS.USER.USERSLIST,
+        element: (
+          <MainLayout>
+            <UsersListPage />
+          </MainLayout>
+        ),
+      },
     ],
   },
   ...authPages,
 ];
 
+// export const userPages = [
+//   {
+//     path: PATHS.USER.ROOT,
+//     element: <UserGuard />,
+//     children: [
+//       {
+//         index: true,
+//         element: (
+//           <MainLayout>
+//             <HomePage />
+//           </MainLayout>
+//         ),
+//       },
+//       {
+//         path: PATHS.USER.PROFILE,
+//         element: (
+//           <MainLayout>
+//             <ProfilePage />
+//           </MainLayout>
+//         ),
+//       },
+//     ],
+//   },
+//   ...authPages,
+// ];
+
 export const GuestRoutes = [...authPages];
 
 export const routers = [
-  ...adminPages,
+  // ...adminPages,
   ...userPages,
   ...GuestRoutes,
+  {
+    path: PATHS.HOME,
+    element: (
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
+    )
+  },
   {
     path: PATHS.ERRORS.NOT_FOUND,
     element: (

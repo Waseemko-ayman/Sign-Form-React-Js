@@ -1,15 +1,16 @@
 export const PATHS = {
-  HOME: "/",
+  // HOME: "/",
   LOGIN: "/login",
   SIGNUP: "/signup",
-  ADMIN: {
-    ROOT: "/admin",
-    PROFILE: "/admin/profile",
-    USERSLIST: "/admin/userslist",
-  },
+  // ADMIN: {
+  //   ROOT: "/",
+  //   PROFILE: "/profile",
+  //   USERSLIST: "/userslist",
+  // },
   USER: {
-    ROOT: "/user",
-    PROFILE: "/user/profile",
+    ROOT: "/",
+    PROFILE: "/profile",
+    USERSLIST: "/userslist",
   },
   ERRORS: {
     NOT_FOUND: "404",
