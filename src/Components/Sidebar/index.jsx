@@ -1,16 +1,20 @@
 import React from "react";
 import "./style.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../Context/AuthContext";
 import { ROLES, THEMES } from "../../Constants";
 import { useThemeContext } from "../../Context/ThemeContext";
+import HomePage from "../../Pages/HomePage";
+import { PATHS } from "../../router/paths";
 
 const Sidebar = () => {
   const { role, setRole } = useAuthContext();
   const { theme, toggleTheme } = useThemeContext();
+  const navigate = useNavigate();
+  
   return (
     <sidebar className="sidebar__games">
-      <svg
+      <svg onClick={() => navigate(PATHS.HOME)}
         xmlns="http://www.w3.org/2000/svg"
         width="60"
         height="60"
@@ -103,7 +107,7 @@ const Sidebar = () => {
           </NavLink>
           <NavLink>
             <li>
-              <button>
+              <button onClick={() => navigate(PATHS.ADMIN.USERSLIST)}>
                 <i className="fa-solid fa-gear"></i>
               </button>
             </li>
@@ -112,24 +116,26 @@ const Sidebar = () => {
       )}
 
       <div className="theme">
-        <button onClick={toggleTheme}>
+        <button onClick={() => theme == THEMES.LIGHT && toggleTheme()}>
           <i style={theme === THEMES.DARK ? 
             {
               color: 'white'
             } : 
             {
               color:'#222',
-            }} className="fa-regular fa-moon">
+            }} 
+            className="fa-regular fa-moon">
           </i>
         </button>
-        <button onClick={toggleTheme}>
+        <button onClick={() => theme == THEMES.DARK && toggleTheme()}>
           <i style={theme === THEMES.LIGHT ? 
             {
               color: 'white'
             } : 
             {
               color:'#222',
-            }} className="fa-regular fa-sun">
+            }} 
+            className="fa-regular fa-sun">
           </i>
         </button>
       </div>

@@ -18,7 +18,7 @@
 .signUp-page .signUp-info-box {
   position: relative;
   width: 642px;
-  /* background-image: url("../../../public/assets/background.png"); */
+  background-image: url("../../assets/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -51,6 +51,7 @@
   max-width: 100%;
   width: 100%;
   overflow-y: auto;
+  background-color: white;
   position: relative;
 }
 
@@ -195,7 +196,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--first-color);
+  background-color: white;
   padding: 0 20px;
   color: #BABABA;
   font-size: 17px;
@@ -206,6 +207,6 @@
 
 .signUp-page .signUp .register + button {
   color: black;
-  background-color: var(--first-color);
+  background-color: white;
   box-shadow: 0 3px 13px #ddd;
 }

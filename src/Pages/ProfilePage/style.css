@@ -1,0 +1,51 @@
+.prfoile__page .profile__info {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 30px 30px;
+  margin-top: 50px;
+}
+
+.prfoile__page .profile__info table {
+  border-collapse: collapse;
+  white-space: nowrap;
+  flex: 1;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  position: relative;
+  font-family: Gilroy, sans-serif;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.prfoile__page .profile__info table th {
+  font-weight: 600;
+  color: #fff;
+  background-color: #2c3e50;
+  padding: 10px 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.prfoile__page .profile__info table tr:first-child th {
+  border-bottom: 1px solid white;
+}
+
+.prfoile__page .profile__info table td {
+  padding: 10px 15px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #f0f0f0;
+  max-width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.prfoile__page .profile__info img {
+  max-width: 100%;
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
+}

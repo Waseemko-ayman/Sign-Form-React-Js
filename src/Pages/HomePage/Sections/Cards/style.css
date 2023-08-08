@@ -18,3 +18,15 @@
   box-shadow: 2px 4px 4px 0px var(--forth-color) inset;
   border-radius: 20px;
 }
+
+.game__cards .card:nth-child(1) {
+  background-image: url("../../../../assets/GodOfWarse.png");
+}
+
+.game__cards .card:nth-child(2) {
+  background-image: url("../../../../assets/AmandaWaller.png");
+}
+
+.game__cards .card:nth-child(3) {
+  background-image: url("../../../../assets/SpiderMan.png");
+}

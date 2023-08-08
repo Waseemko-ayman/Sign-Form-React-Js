@@ -24,6 +24,10 @@
   box-shadow: 2px 4px 4px 0px var(--forth-color) inset;
 }
 
+.sidebar__games svg {
+  cursor: pointer;
+}
+
 .sidebar__games ul {
   display: flex;
   flex-direction: column;

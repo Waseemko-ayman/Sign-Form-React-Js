@@ -3,13 +3,8 @@
   gap: 35px;
 }
 
-.main__layout .left-side {
-  /* flex: 1; */
-}
-
 .main__layout .right-side {
-  /* flex: 1; */
-  /* background-color: red; */
   overflow-y: auto;
   position: relative;
+  width: 100%;
 }

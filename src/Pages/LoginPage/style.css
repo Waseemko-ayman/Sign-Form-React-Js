@@ -2,6 +2,7 @@
   max-width: 100%;
   width: 1440px;
   height: 100vh;
+  background-color: white;
   position: relative;
   display: flex;
 }
@@ -18,7 +19,6 @@
 .logIn-page .logIn-info-box {
   position: relative;
   width: 642px;
-  background-color: var(--first-color);
 }
 
 @media (max-width: 1115px) {
@@ -89,6 +89,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -205,7 +206,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   color: #BABABA;
-  background-color: var(--first-color);
+  background-color: white;
   padding: 0 20px;
   text-align: center;
   font-size: 12px;

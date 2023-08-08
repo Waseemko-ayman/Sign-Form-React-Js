@@ -28,6 +28,7 @@
   font-size: 18px;
   flex: 1;
   border: none;
+  background: transparent;
   font-family: 'Inter', sans-serif;
 }
 

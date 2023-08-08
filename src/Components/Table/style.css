@@ -1,0 +1,46 @@
+.table__component table {
+  border-collapse: collapse;
+  max-width: 100%;
+  width: calc(100% - 100px);
+  margin: 0 auto;
+  white-space: nowrap;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  font-family: Gilroy, sans-serif;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.table__component table thead th {
+  font-weight: 600;
+  color: #fff;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+  padding: 12px 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table__component table tbody td {
+  padding: 12px 15px;
+  text-align: center;
+  vertical-align: middle;
+  border-top: 1px solid #f0f0f0;
+  max-width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.table__component table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+
+
+.table__component table tbody tr.active-row {
+  font-weight: 600;
+  color: #009879;
+}

@@ -1,11 +1,11 @@
 import React from 'react'
 import "./style.css";
 
-const Logo = ({ logoImage }) => {
+const Logo = ({ logoImage, white }) => {
   return (
     <div className='logo'>
       <img src={logoImage} alt="logo" />
-      <span>Gamers</span>
+      <span className={white ? "white__color" : ""}>Gamers</span>
     </div>
   )
 }
