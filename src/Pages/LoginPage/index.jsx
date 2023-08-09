@@ -34,15 +34,14 @@ const formSchema = Yup.object({
 
 const LogInPage = () => {
   const navigate = useNavigate();
-  const [show, setShow] = useState(false); 
+  const [show, setShow] = useState(false);
   const { login, isLoading } = useAuthContext();
 
   const {
     register,
     handleSubmit,
-    formState: { errors }, // errors and setErrors بطلت محتاج ال errors هندل ال
+    formState: { errors },
   } = useForm({
-    // formData, setFormData هنا كل الداتا مخزنة فيها فهستغني عن
     resolver: yupResolver(formSchema),
   });
 
@@ -98,14 +97,17 @@ const LogInPage = () => {
               {...register("password")}
               imageSrc={show ? EyeImg : EyeImg}
             />
-            {errors.password && <p className="error">{errors.password.message}</p>}
-            <div className="sign-btn">
-              <Button btnText={isLoading ? "Loading..." : "Login"} />
-              <p>
-                Don't have an account? <span onClick={() => navigate(PATHS.SIGNUP)}>Register</span>
-              </p>
-            </div>
+            {errors.password && (
+              <p className="error">{errors.password.message}</p>
+            )}
           </form>
+          <div className="sign-btn">
+            <Button btnText={isLoading ? "Loading..." : "Login"} />
+            <p>
+              Don't have an account?{" "}
+              <span onClick={() => navigate(PATHS.SIGNUP)}>Register</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

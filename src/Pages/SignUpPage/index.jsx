@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./style.css";
 import Logo from "../../Components/Logo";
 import Paragraph from "../../Components/Paragraph";
@@ -13,6 +12,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { useAuthContext } from "../../Context/AuthContext";
+import axios from "axios";
+import { AUTH_API_URL } from "../../config/api";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex =
@@ -57,7 +58,23 @@ const SignUpPage = () => {
 
   const onSubmit = async (data) => {
     signup(data);
-    console.log(data)
+    // console.log(data)
+    //   if(formData.password === formData.rePassword)
+    //   signup({
+    //     // API هان لازم يبعت البيانات بالشكل اللي بيقبله ال
+    //     name: formData.username,
+    //     email: formData.email,
+    //     password: formData.password
+    //   });
+    // else {
+    //   alert('Password and Repeat Password are no the same!');
+    // }
+    try {
+      const res = await axios.post(AUTH_API_URL, data);
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   // console.log(errors);
@@ -89,7 +106,9 @@ const SignUpPage = () => {
                 {...register("username")}
                 imageHidden
               />
-              {errors.username && <p className="error">{errors.username.message}</p>}
+              {errors.username && (
+                <p className="error">{errors.username.message}</p>
+              )}
               <Inputs
                 type="email"
                 label="Email address*"
@@ -113,7 +132,9 @@ const SignUpPage = () => {
                 {...register("password")}
                 imageSrc={EyeImg}
               />
-              {errors.password && <p className="error">{errors.password.message}</p>}
+              {errors.password && (
+                <p className="error">{errors.password.message}</p>
+              )}
               <Inputs
                 type="password"
                 label="Repeat password*"
@@ -132,21 +153,27 @@ const SignUpPage = () => {
                     {...register("checked")}
                     defaultChecked
                   />
-                  <label htmlFor="checkbox">I agree to terms & conditions</label>
+                  <label htmlFor="checkbox">
+                    I agree to terms & conditions
+                  </label>
                 </div>
-                {errors.checked && <p className="error">{errors.checked.message}</p>}
+                {errors.checked && (
+                  <p className="error">{errors.checked.message}</p>
+                )}
               </div>
               <div className="register">
-                <Button btnText={isLoading ? "Loading..." : "Register Account"} />
+                <Button
+                  btnText={isLoading ? "Loading..." : "Register Account"}
+                />
                 <span></span>
               </div>
-              <button
-                className="register-btn"
-                onClick={() => navigate(PATHS.LOGIN)}
-              >
-                login
-              </button>
             </form>
+            <button
+              className="register-btn"
+              onClick={() => navigate(PATHS.LOGIN)}
+            >
+              login
+            </button>
           </div>
         </div>
       </div>

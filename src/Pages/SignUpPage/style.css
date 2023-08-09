@@ -205,7 +205,7 @@
   line-height: normal;
 }
 
-.signUp-page .signUp .register + button {
+.signUp-page .signUp form + button {
   color: black;
   background-color: white;
   box-shadow: 0 3px 13px #ddd;
