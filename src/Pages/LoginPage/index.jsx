@@ -10,60 +10,45 @@ import GoogleImg from "../../assets/google.svg";
 import TwitterImg from "../../assets/twitter.svg";
 import LinkedInImg from "../../assets/linkedin.svg";
 import GithubImg from "../../assets/github.svg";
+import joystick from "../../assets/joystick.png";
+import logo from "../../assets/logo.svg";
 import EyeImg from "../../assets/eye.svg";
 import { useAuthContext } from "../../Context/AuthContext";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+import { useForm } from "react-hook-form";
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordRegex =
+  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
+
+const formSchema = Yup.object({
+  email: Yup.string()
+    .matches(emailRegex, "Enter Correct Email")
+    .required("Email is required"),
+  password: Yup.string().matches(
+    passwordRegex,
+    "password should be more that 8 and contains small and capital and number and special character"
+  ),
+});
 
 const LogInPage = () => {
   const navigate = useNavigate();
   const [show, setShow] = useState(false); 
-
   const { login, isLoading } = useAuthContext();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }, // errors and setErrors بطلت محتاج ال errors هندل ال
+  } = useForm({
+    // formData, setFormData هنا كل الداتا مخزنة فيها فهستغني عن
+    resolver: yupResolver(formSchema),
   });
 
-  const [errors, setErrors] = useState({});
-
-  const handleInputChange = ({ target: { value, name } }) =>
-    // setFormData((prevData) => ({
-    //   ...prevData,
-    //   [name]: value,
-    // }));
-  setFormData((prev) => ({ ...prev, [name]: value }));
-
-  const isValidEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // login(formData);
-
-    const validationErrors = {};
-
-    // Validate Email
-    if (formData.email.trim() === '') {
-      validationErrors.email = 'Email is required';
-    } else if (!isValidEmail(formData.email)) {
-      validationErrors.email = 'Invalid email format';
-    }
-
-    // Validate password
-    if (formData.password.trim() === '') {
-      validationErrors.password = 'Password is required';
-    } else if (formData.password.length > 6) {
-      validationErrors.password = 'Password must be at least 6 characters long';
-    }
-
-    // Set the validation errors
-    setErrors(validationErrors);
-
-    // Submit the form if there are no validation errors
-    if (Object.keys(validationErrors).length === 0) {
-      // Perform form submission logic here
-      console.log('Form submitted successfully');
-    }
+  const onSubmit = async (data) => {
+    login(data);
+    // console.log(data);
   };
 
   // const hadnleShow = () => {
@@ -73,8 +58,8 @@ const LogInPage = () => {
   return (
     <div className="logIn-page">
       <div className="logIn-info-box">
-        <Logo logoImage="/assets/logo.svg" />
-        <Paragraph cornerImage="/assets/joystick.png" />
+        <Logo logoImage={logo} />
+        <Paragraph cornerImage={joystick} />
       </div>
       <div className="logIn-box">
         <div>
@@ -97,27 +82,23 @@ const LogInPage = () => {
             </ul>
             <span></span>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Inputs
               label="Your email"
               type="email"
               placeholder="Write your email"
-              onChange={handleInputChange}
-              value={formData.email}
+              {...register("email")}
               imageHidden
-              required
             />
-            {errors.email && <p className="error">{errors.email}</p>}
+            {errors.email && <p className="error">{errors.email.message}</p>}
             <Inputs
               label="Enter your Password*"
               type={show ? "text" : "password"}
               placeholder="•••••••••"
-              onChange={handleInputChange}
-              value={formData.password}
+              {...register("password")}
               imageSrc={show ? EyeImg : EyeImg}
-              required
             />
-            {errors.password && <p className="error">{errors.password}</p>}
+            {errors.password && <p className="error">{errors.password.message}</p>}
             <div className="sign-btn">
               <Button btnText={isLoading ? "Loading..." : "Login"} />
               <p>

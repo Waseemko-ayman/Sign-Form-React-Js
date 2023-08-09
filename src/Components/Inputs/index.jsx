@@ -1,7 +1,7 @@
 import React from 'react'
 import "./style.css";
 
-const Inputs = ({ label, type, placeholder, imageSrc, imageHidden }) => {
+const Inputs = ({ label, type, placeholder, imageSrc, imageHidden,  }) => {
   return (
     <div className='input-box'>
       <label>{ label }</label>
