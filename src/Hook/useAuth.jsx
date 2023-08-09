@@ -72,6 +72,12 @@ const useAuth = () => {
         timer: 2000
       });
     } catch (error) {
+      Swal.fire({
+        icon : "error",
+        title: 'The data is incorrect!',
+        showConfirmButton: false,
+        timer: 2000
+      });
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
   };
