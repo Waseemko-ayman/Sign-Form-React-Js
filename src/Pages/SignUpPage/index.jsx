@@ -14,13 +14,14 @@ import { useForm } from "react-hook-form";
 import { useAuthContext } from "../../Context/AuthContext";
 import axios from "axios";
 import { AUTH_API_URL } from "../../config/api";
+import { ROLES } from "../../Constants";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordRegex =
   /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 
-const formSchema = Yup.object({
-  username: Yup.string().required("Username is required"),
+export const formSchema = Yup.object({
+  name: Yup.string().required("Username is required"),
   email: Yup.string()
     .matches(emailRegex, "Enter Correct Email")
     .required("Email is required"),
@@ -30,14 +31,16 @@ const formSchema = Yup.object({
     .min(10)
     .max(13)
     .required("Phone is required"),
-  password: Yup.string().matches(
-    passwordRegex,
-    "password should be more that 8 and contains small and capital and number and special character"
-  ),
-  repeatPassword: Yup.string().matches(
-    passwordRegex,
-    "password should be more that 8 and contains small and capital and number and special character"
-  ),
+  // password: Yup.string().matches(
+  //   passwordRegex,
+  //   "password should be more that 8 and contains small and capital and number and special character"
+  // ),
+  // repeatPassword: Yup.string().matches(
+  //   passwordRegex,
+  //   "password should be more that 8 and contains small and capital and number and special character"
+  // ),
+  password: Yup.string().required("password should be more that 8 and contains small and capital and number and special character"),
+  repeatPassword: Yup.string().required("password should be more that 8 and contains small and capital and number and special character"),
   checked: Yup.boolean().oneOf(
     [true],
     "You must agree to the terms and conditions"
@@ -50,34 +53,15 @@ const SignUpPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }, // errors and setErrors بطلت محتاج ال errors هندل ال
+    formState: { errors },
   } = useForm({
-    // formData, setFormData هنا كل الداتا مخزنة فيها فهستغني عن
     resolver: yupResolver(formSchema),
   });
 
   const onSubmit = async (data) => {
     signup(data);
-    // console.log(data)
-    //   if(formData.password === formData.rePassword)
-    //   signup({
-    //     // API هان لازم يبعت البيانات بالشكل اللي بيقبله ال
-    //     name: formData.username,
-    //     email: formData.email,
-    //     password: formData.password
-    //   });
-    // else {
-    //   alert('Password and Repeat Password are no the same!');
-    // }
-    try {
-      const res = await axios.post(AUTH_API_URL, data);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(data);
   };
-
-  // console.log(errors);
 
   return (
     <div className="signUp-page">
@@ -99,17 +83,17 @@ const SignUpPage = () => {
               </p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Inputs
+              <input
                 type="text"
                 label="Username*"
                 placeholder="Enter username"
-                {...register("username")}
+                {...register("name")}
                 imageHidden
               />
               {errors.username && (
                 <p className="error">{errors.username.message}</p>
               )}
-              <Inputs
+              <input
                 type="email"
                 label="Email address*"
                 placeholder="Enter email address"
@@ -117,7 +101,7 @@ const SignUpPage = () => {
                 imageHidden
               />
               {errors.email && <p className="error">{errors.email.message}</p>}
-              <Inputs
+              <input
                 type="number"
                 label="Phone*"
                 placeholder="Enter phone"
@@ -125,7 +109,7 @@ const SignUpPage = () => {
                 imageHidden
               />
               {errors.phone && <p className="error">{errors.phone.message}</p>}
-              <Inputs
+              <input
                 type="password"
                 label="Create Password*"
                 placeholder="Password"
@@ -135,7 +119,7 @@ const SignUpPage = () => {
               {errors.password && (
                 <p className="error">{errors.password.message}</p>
               )}
-              <Inputs
+              <input
                 type="password"
                 label="Repeat password*"
                 placeholder="Repeat password"

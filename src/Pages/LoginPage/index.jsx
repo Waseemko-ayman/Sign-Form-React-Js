@@ -26,8 +26,11 @@ const formSchema = Yup.object({
   email: Yup.string()
     .matches(emailRegex, "Enter Correct Email")
     .required("Email is required"),
-  password: Yup.string().matches(
-    passwordRegex,
+  // password: Yup.string().matches(
+  //   passwordRegex,
+  //   "password should be more that 8 and contains small and capital and number and special character"
+  // ),
+  password: Yup.string().required(
     "password should be more that 8 and contains small and capital and number and special character"
   ),
 });
@@ -47,7 +50,7 @@ const LogInPage = () => {
 
   const onSubmit = async (data) => {
     login(data);
-    // console.log(data);
+    console.log(data);
   };
 
   // const hadnleShow = () => {
@@ -82,7 +85,7 @@ const LogInPage = () => {
             <span></span>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Inputs
+            <input
               label="Your email"
               type="email"
               placeholder="Write your email"
@@ -90,7 +93,8 @@ const LogInPage = () => {
               imageHidden
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
-            <Inputs
+
+            <input
               label="Enter your Password*"
               type={show ? "text" : "password"}
               placeholder="•••••••••"
@@ -100,14 +104,15 @@ const LogInPage = () => {
             {errors.password && (
               <p className="error">{errors.password.message}</p>
             )}
+
+            <div className="login-btn">
+              <Button btnText={isLoading ? "Loading..." : "Login"} />
+              <p>
+                Don't have an account?{" "}
+                <span onClick={() => navigate(PATHS.SIGNUP)}>Register</span>
+              </p>
+            </div>
           </form>
-          <div className="sign-btn">
-            <Button btnText={isLoading ? "Loading..." : "Login"} />
-            <p>
-              Don't have an account?{" "}
-              <span onClick={() => navigate(PATHS.SIGNUP)}>Register</span>
-            </p>
-          </div>
         </div>
       </div>
     </div>

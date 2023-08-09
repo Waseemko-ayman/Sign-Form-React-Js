@@ -10,7 +10,8 @@ const GuestGuards = ({ children }) => {
   //   return <Navigate to={PATHS.ADMIN.ROOT} replace={true} />;
   if (role === ROLES.USER) 
     return <Navigate to={PATHS.USER.ROOT} replace={true} />;
-  return <Navigate to={PATHS.LOGIN} replace={true} />;
+  // return <Navigate to={PATHS.LOGIN} replace={true} />;
+  return children;
 };
 
 export default GuestGuards;

@@ -3,6 +3,7 @@ import { ROLES } from "../Constants";
 import { AUTH_ACTIONS, AUTH_API_PATHS } from "../Constants/auth";
 import axios from "axios";
 import { AUTH_API_URL } from "../config/api";
+import Swal from 'sweetalert2'
 
 const initialState = {
   isAuth: false,
@@ -23,7 +24,7 @@ const reduce = (state, action) => {
 
     case AUTH_ACTIONS.AUTHORIZE:
       const token = action?.payload?.token || state?.token;
-      const role = action?.payload.isAdmin ? ROLES.ADMIN : ROLES.USER;
+      const role = action?.payload?.isAdmin ? ROLES.ADMIN : ROLES.USER;
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
       localStorage.setItem("user", JSON.stringify(action.payload.user));
@@ -56,7 +57,7 @@ const reduce = (state, action) => {
 const useAuth = () => {
   const [state, dispatch] = useReducer(reduce, initialState);
   const token = state.token || localStorage.getItem('token');
-  const config = {header: {Authorization: `Bearer ${token}`}};
+  const config = {headers: {Authorization: `Bearer ${token}`}};
 
   // Login
   const login = async (body) => {
@@ -64,6 +65,12 @@ const useAuth = () => {
     try {
       const { data } = await axios.post(AUTH_API_URL + AUTH_API_PATHS.LOGIN, body);
       dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
+      Swal.fire({
+        icon : "success",
+        title: 'Logged in Successfully',
+        showConfirmButton: false,
+        timer: 2000
+      });
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
@@ -75,6 +82,12 @@ const useAuth = () => {
     try {
       const { data } = await axios.post(AUTH_API_URL + AUTH_API_PATHS.SIGNUP, body);
       dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
+      Swal.fire({
+        icon : "success",
+        title: 'Registered Successfully',
+        showConfirmButton: false,
+        timer: 2000
+      });
     } catch (error) {
       dispatch({ typeof: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }

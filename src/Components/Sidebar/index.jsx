@@ -8,13 +8,17 @@ import HomePage from "../../Pages/HomePage";
 import { PATHS } from "../../router/paths";
 
 const Sidebar = () => {
-  const { role, setRole } = useAuthContext();
+  const { role, user, logout } = useAuthContext();
   const { theme, toggleTheme } = useThemeContext();
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+  }
   
   return (
     <sidebar className="sidebar__games">
-      <svg onClick={() => navigate(PATHS.HOME)}
+      <svg onClick={() => navigate(PATHS.USER.ROOT)}
         xmlns="http://www.w3.org/2000/svg"
         width="60"
         height="60"
@@ -89,7 +93,7 @@ const Sidebar = () => {
         <ul>
           <NavLink>
             <li>
-              <button onClick={() => setRole(ROLES.GUEST)}>
+              <button onClick={handleLogout}>
                 <i className="fa-solid fa-right-from-bracket"></i>
               </button>
             </li>
@@ -99,14 +103,14 @@ const Sidebar = () => {
         <ul>
           <NavLink>
             <li>
-              <button onClick={() => setRole(ROLES.GUEST)}>
+              <button onClick={handleLogout}>
                 <i className="fa-solid fa-right-from-bracket"></i>
               </button>
             </li>
           </NavLink>
           <NavLink>
             <li>
-              <button onClick={() => navigate(PATHS.ADMIN.USERSLIST)}>
+              <button onClick={() => navigate(PATHS.USER.USERSLIST)}>
                 <i className="fa-solid fa-gear"></i>
               </button>
             </li>

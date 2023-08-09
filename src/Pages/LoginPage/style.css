@@ -215,12 +215,12 @@
   line-height: normal;
 }
 
-.logIn-page .logIn-box form .sign-btn {
+.logIn-page .logIn-box form .login-btn {
   margin-top: 20px;
   text-align: center;
 }
 
-.logIn-page .logIn-box form .sign-btn p {
+.logIn-page .logIn-box form .login-btn p {
   color: #696F79;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -230,7 +230,7 @@
   margin-top: 27px;
 }
 
-.logIn-page .logIn-box form .sign-btn p span {
+.logIn-page .logIn-box form .login-btn p span {
   color: #1565D8;
   font-weight: 700;
   cursor: pointer;

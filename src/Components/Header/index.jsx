@@ -7,16 +7,18 @@ import { PATHS } from "../../router/paths";
 import { ROLES } from "../../Constants";
 
 const Header = () => {
-  const { role } = useAuthContext();
-  const data = useAuthContext();
+  const { role, user } = useAuthContext();
+  // const data = useAuthContext();
 
   return (
     <header className="header__games">
-      <Link to={role === ROLES.ADMIN ? PATHS.ADMIN.PROFILE : PATHS.USER.PROFILE}>
+      {/* <Link to={role === ROLES.USER ? PATHS.USER.PROFILE : PATHS.USER.PROFILE}> */}
+      <Link to={role === ROLES.USER && PATHS.USER.PROFILE}>
         <div className="title">
           <div className="text">
             <span>Welcome back,</span>
-            <span>{data.role}!</span>
+            {/* <span>{data.role}!</span> */}
+            <span>{user.name}!</span>
           </div>
           <div className="image">
             <img src={AccontImage} alt="user" />
