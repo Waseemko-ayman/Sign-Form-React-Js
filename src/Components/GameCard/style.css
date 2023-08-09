@@ -17,8 +17,25 @@
   transition: transform .3s;
 }
 
-.card:hover > img {
+.card.card:nth-child(1):hover > img {
   transform: scale(1.1) translate(9px, -8px);
+}
+
+.card:nth-child(2) > img {
+  width: 173px;
+}
+
+.card.card:nth-child(2):hover > img {
+  transform: scale(1.1) translate(5px, -10px);
+}
+
+.card:nth-child(3) > img {
+  width: 129px;
+  border-radius: 0 0 0 55px;
+}
+
+.card.card:nth-child(3):hover > img {
+  transform: scale(1.1) translate(5px, -10px);
 }
 
 .card .text {
@@ -37,6 +54,11 @@
   filter: drop-shadow(0 0 20px #FFF);
 }
 
+.card:nth-child(2) .text img {
+  width: 200px;
+  padding-right: 10px;
+}
+
 .card .text p {
   color: #D8D8D8;
   width: 400px;
@@ -47,4 +69,8 @@
   font-weight: 800;
   line-height: normal;
   padding-right: 10px;
+}
+
+.image__hidden {
+  display: none;
 }

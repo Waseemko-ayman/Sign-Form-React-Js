@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const GameCard = ({ GamePerson, GameLogo, GameDescription }) => {
+const GameCard = ({ GamePerson, GameLogo, GameDescription, imageHidden }) => {
   return (
     <div className="card">
       <img src={GamePerson} alt="GamePerson" />

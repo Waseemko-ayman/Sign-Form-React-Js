@@ -1,14 +1,16 @@
+import MainLayout from "./Components/MainLayout";
 import { useThemeContext } from "./Context/ThemeContext";
-import LogInPage from "./Pages/LogInPage";
-import SignUpPage from "./Pages/SignUpPage";
+import HomePage from "./Pages/HomePage";
 import Router from "./router";
 
 function App() {
   const { theme } = useThemeContext();
   return (
     <div className="App" data-theme={theme}>
-      <Router />
-      {/* <SignUpPage /> */}
+      {/* <Router /> */}
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
     </div>
   );
 }

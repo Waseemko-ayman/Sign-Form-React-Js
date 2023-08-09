@@ -8,7 +8,6 @@ import { ROLES } from "../../Constants";
 
 const Header = () => {
   const { role, user } = useAuthContext();
-  // const data = useAuthContext();
 
   return (
     <header className="header__games">
@@ -17,8 +16,7 @@ const Header = () => {
         <div className="title">
           <div className="text">
             <span>Welcome back,</span>
-            {/* <span>{data.role}!</span> */}
-            <span>{user.name}!</span>
+            {/* <span>{user.username}!</span> */}
           </div>
           <div className="image">
             <img src={AccontImage} alt="user" />

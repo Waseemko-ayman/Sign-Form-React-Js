@@ -4,6 +4,7 @@ import { AUTH_ACTIONS, AUTH_API_PATHS } from "../Constants/auth";
 import axios from "axios";
 import { AUTH_API_URL } from "../config/api";
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
   isAuth: false,

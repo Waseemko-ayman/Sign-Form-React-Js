@@ -22,16 +22,16 @@
 }
 
 .box:first-of-type img:hover {
-  box-shadow: 0px 0px 6.08159875869751px 0px #619ED7, 0px 0px 12.16319751739502px 0px #619ED7, 0px 0px 42.57119369506836px 0px #619ED7, 0px 0px 85.14238739013672px 0px #619ED7, 0px 0px 145.9583740234375px 0px #619ED7, 0px 0px 255.42715454101562px 0px #619ED7;
+  box-shadow: 0px 0px 20px 0px #619ED7;
 }
 .box:nth-of-type(2) img:hover {
-  box-shadow: 0px 0px 6.300000190734863px 0px #1360DD, 0px 0px 12.600000381469727px 0px #1360DD, 0px 0px 44.099998474121094px 0px #1360DD, 0px 0px 88.19999694824219px 0px #1360DD, 0px 0px 151.1999969482422px 0px #1360DD, 0px 0px 264.6000061035156px 0px #1360DD;
+  box-shadow: 0px 0px 20px 0px #1360DD;
 }
 .box:nth-of-type(3) img:hover {
-  box-shadow: 0px 0px 6.300000190734863px 0px #17D924, 0px 0px 12.600000381469727px 0px #17D924, 0px 0px 44.099998474121094px 0px #17D924, 0px 0px 88.19999694824219px 0px #17D924, 0px 0px 151.1999969482422px 0px #17D924, 0px 0px 264.6000061035156px 0px #17D924;
+  box-shadow: 0px 0px 20px 0px #17D924 ;
 }
 .box:last-of-type img:hover {
-  box-shadow: 0px 0px 6.300000190734863px 0px #DFE228, 0px 0px 12.600000381469727px 0px #DFE228, 0px 0px 44.099998474121094px 0px #DFE228, 0px 0px 88.19999694824219px 0px #DFE228, 0px 0px 151.1999969482422px 0px #DFE228, 0px 0px 264.6000061035156px 0px #DFE228;
+  box-shadow: 0px 0px 20px 0px #DFE228;
 }
 
 .box p {

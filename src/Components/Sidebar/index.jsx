@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../Context/AuthContext";
 import { ROLES, THEMES } from "../../Constants";
 import { useThemeContext } from "../../Context/ThemeContext";
-import HomePage from "../../Pages/HomePage";
 import { PATHS } from "../../router/paths";
 
 const Sidebar = () => {

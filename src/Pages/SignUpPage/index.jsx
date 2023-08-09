@@ -57,7 +57,7 @@ const SignUpPage = () => {
 
   const onSubmit = async (data) => {
     signup(data);
-    // console.log(data);
+    console.log(data);
   };
 
   return (

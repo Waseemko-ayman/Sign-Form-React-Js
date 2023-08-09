@@ -1,6 +1,7 @@
 .content {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 50px;
   padding: 20px 20px;
 }
