@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import Logo from "../../Components/Logo";
 import Paragraph from "../../Components/Paragraph";
-import Inputs from "../../Components/Inputs";
+// import Inputs from "../../Components/Inputs";
 import Button from "../../Components/Button";
 import { PATHS } from "../../router/paths";
 import { useNavigate } from "react-router-dom";
@@ -19,8 +19,8 @@ import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex =
-  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
+// const passwordRegex =
+//   /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 
 const formSchema = Yup.object({
   email: Yup.string()

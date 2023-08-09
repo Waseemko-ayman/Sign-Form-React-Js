@@ -4,12 +4,11 @@ import SignUpPage from "./Pages/SignUpPage";
 import Router from "./router";
 
 function App() {
-  // const { role } = useAuthContext();
   const { theme } = useThemeContext();
   return (
     <div className="App" data-theme={theme}>
-      {/* <Router /> */}
-      <SignUpPage />
+      <Router />
+      {/* <SignUpPage /> */}
     </div>
   );
 }

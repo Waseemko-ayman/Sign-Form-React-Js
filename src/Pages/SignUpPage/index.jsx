@@ -1,7 +1,7 @@
 import "./style.css";
 import Logo from "../../Components/Logo";
 import Paragraph from "../../Components/Paragraph";
-import Inputs from "../../Components/Inputs";
+// import Inputs from "../../Components/Inputs";
 import Button from "../../Components/Button";
 import WhiteLogo from "../../assets/white-logo.svg";
 import cornerImage from "../../assets/corner-image.svg";
@@ -12,13 +12,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { useAuthContext } from "../../Context/AuthContext";
-import axios from "axios";
-import { AUTH_API_URL } from "../../config/api";
-import { ROLES } from "../../Constants";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex =
-  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
+// const passwordRegex =
+//   /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 
 export const formSchema = Yup.object({
   name: Yup.string().required("Username is required"),
@@ -60,7 +57,7 @@ const SignUpPage = () => {
 
   const onSubmit = async (data) => {
     signup(data);
-    console.log(data);
+    // console.log(data);
   };
 
   return (
@@ -90,8 +87,8 @@ const SignUpPage = () => {
                 {...register("name")}
                 imageHidden
               />
-              {errors.username && (
-                <p className="error">{errors.username.message}</p>
+              {errors.name && (
+                <p className="error">{errors.name.message}</p>
               )}
               <input
                 type="email"

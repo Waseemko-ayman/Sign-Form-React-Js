@@ -1,7 +1,6 @@
 import { Navigate } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import ProfilePage from "../Pages/ProfilePage";
-import AdminGuard from "../Components/Guards/AdminGuard";
 import UserGuard from "../Components/Guards/UserGuard";
 import { PATHS } from "./paths";
 import SignUpPage from "../Pages/SignUpPage";
