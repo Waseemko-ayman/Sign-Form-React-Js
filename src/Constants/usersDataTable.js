@@ -1,6 +1,6 @@
 export const USERS_COLUMNS = (handleDelete) => [
   {
-    key: 'id',
+    key: '_id',
     title: 'Id'
   },
   {

@@ -1,14 +1,8 @@
 export const PATHS = {
-  // HOME: "/",
+  HOME: "/",
   LOGIN: "/login",
   SIGNUP: "/signup",
-  // ADMIN: {
-  //   ROOT: "/",
-  //   PROFILE: "/profile",
-  //   USERSLIST: "/userslist",
-  // },
   USER: {
-    ROOT: "/",
     PROFILE: "/profile",
     USERSLIST: "/userslist",
   },

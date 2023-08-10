@@ -5,18 +5,20 @@ import { useAuthContext } from "../../Context/AuthContext";
 import { Link } from "react-router-dom";
 import { PATHS } from "../../router/paths";
 import { ROLES } from "../../Constants";
+// import useAuth from "../../Hook/useAuth";
 
 const Header = () => {
-  const { role, user } = useAuthContext();
-
+  const { role } = useAuthContext();
+  // const {user} = useAuth();
+  // console.log(user)
+  
   return (
     <header className="header__games">
-      {/* <Link to={role === ROLES.USER ? PATHS.USER.PROFILE : PATHS.USER.PROFILE}> */}
-      <Link to={role === ROLES.USER && PATHS.USER.PROFILE}>
+      <Link to={PATHS.USER.PROFILE}>
         <div className="title">
           <div className="text">
             <span>Welcome back,</span>
-            {/* <span>{user.username}!</span> */}
+            {/* <span>{user.name}!</span> */}
           </div>
           <div className="image">
             <img src={AccontImage} alt="user" />

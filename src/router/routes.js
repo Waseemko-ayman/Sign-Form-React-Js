@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import ProfilePage from "../Pages/ProfilePage";
 import UserGuard from "../Components/Guards/UserGuard";
@@ -8,6 +8,7 @@ import GuestGuards from "../Components/Guards/GuestGuards";
 import LogInPage from "../Pages/LogInPage";
 import UsersListPage from "../Pages/UsersListPage";
 import MainLayout from "../Components/MainLayout";
+import AdminGuard from "../Components/Guards/AdminGuard";
 
 export const authPages = [
   {
@@ -28,39 +29,39 @@ export const authPages = [
   },
 ];
 
-export const userPages = [
-  {
-    path: PATHS.USER.ROOT,
-    element: <UserGuard />,
-    children: [
-      {
-        index: true,
-        element: (
-          <MainLayout>
-            <HomePage />
-          </MainLayout>
-        ),
-      },
-      {
-        path: PATHS.USER.PROFILE,
-        element: (
-          <MainLayout>
-            <ProfilePage />
-          </MainLayout>
-        ),
-      },
-      {
-        path: PATHS.USER.USERSLIST,
-        element: (
-          <MainLayout>
-            <UsersListPage />
-          </MainLayout>
-        ),
-      },
-    ],
-  },
-  ...authPages,
-];
+// export const adminPages = [
+//   {
+//     path: PATHS.USER.ROOT,
+//     element: <AdminGuard />,
+//     children: [
+//       {
+//         index: true,
+//         element: (
+//           <MainLayout>
+//             <HomePage />
+//           </MainLayout>
+//         ),
+//       },
+//       {
+//         path: PATHS.USER.PROFILE,
+//         element: (
+//           <MainLayout>
+//             <ProfilePage />
+//           </MainLayout>
+//         ),
+//       },
+//       {
+//         path: PATHS.USER.USERSLIST,
+//         element: (
+//           <MainLayout>
+//             <UsersListPage />
+//           </MainLayout>
+//         ),
+//       },
+//     ],
+//   },
+//   ...authPages,
+// ];
 
 // export const userPages = [
 //   {
@@ -91,23 +92,41 @@ export const userPages = [
 export const GuestRoutes = [...authPages];
 
 export const routers = [
-  // ...adminPages,
-  ...userPages,
-  ...GuestRoutes,
   {
     path: PATHS.HOME,
     element: (
-      <MainLayout>
-        <HomePage />
-      </MainLayout>
-    )
+      <UserGuard>
+        <MainLayout>
+          <Outlet />
+        </MainLayout>
+      </UserGuard>
+    ),
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: PATHS.USER.PROFILE,
+        element: <ProfilePage />,
+      },
+      {
+        path: PATHS.USER.USERSLIST,
+        element: (
+          <AdminGuard>
+            <UsersListPage />
+          </AdminGuard>
+        ),
+      },
+    ],
   },
+  ...GuestRoutes,
   {
     path: PATHS.ERRORS.NOT_FOUND,
     element: (
       <h1
         style={{
-          color: "white",
+          color: "black",
           position: "absolute",
           top: "50%",
           left: "50%",

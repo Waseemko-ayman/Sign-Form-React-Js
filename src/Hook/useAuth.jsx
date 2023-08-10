@@ -4,7 +4,6 @@ import { AUTH_ACTIONS, AUTH_API_PATHS } from "../Constants/auth";
 import axios from "axios";
 import { AUTH_API_URL } from "../config/api";
 import Swal from 'sweetalert2'
-import { useNavigate } from "react-router-dom";
 
 const initialState = {
   isAuth: false,
@@ -16,6 +15,7 @@ const initialState = {
 };
 
 const reduce = (state, action) => {
+  console.log(state)
   switch (action.type) {
     case AUTH_ACTIONS.SET_LOADING:
       return {
@@ -28,11 +28,11 @@ const reduce = (state, action) => {
       const role = action?.payload?.isAdmin ? ROLES.ADMIN : ROLES.USER;
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
-      localStorage.setItem("user", JSON.stringify(action.payload.user));
+      console.log('hjazi ',action.payload)
+      localStorage.setItem("user", JSON.stringify(action.payload));
       return {
-        ...state,
         isAuth: true,
-        user: action.payload.user,
+        user: action.payload,
         token: token,
         role: role,
         isLoading: false,
@@ -65,7 +65,7 @@ const useAuth = () => {
     dispatch({ type: AUTH_ACTIONS.SET_LOADING });
     try {
       const { data } = await axios.post(AUTH_API_URL + AUTH_API_PATHS.LOGIN, body);
-      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
+      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data || data?.data });
       Swal.fire({
         icon : "success",
         title: 'Logged in Successfully',
@@ -110,13 +110,14 @@ const useAuth = () => {
     dispatch({ type: AUTH_ACTIONS.SET_LOADING });
     try {
       const { data } = await axios.get(AUTH_API_URL + AUTH_API_PATHS.PROFILE, config);
-      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
+      return data
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
   }
 
   return {
+    ...state,
     login,
     signup,
     logout,

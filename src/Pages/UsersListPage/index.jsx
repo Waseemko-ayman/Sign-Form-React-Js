@@ -5,37 +5,36 @@ import Table from "../../Components/Table";
 import { USERS_COLUMNS } from "../../Constants/usersDataTable";
 import axios from "axios";
 import { AUTH_API_URL } from "../../config/api";
+import { useAuthContext } from "../../Context/AuthContext";
 
 const UsersListPage = () => {
   const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading, token } = useAuthContext();
   const [, setError] = useState(null);
 
   useEffect(() => {
-    (
-      async () => {
-        try {
-          setIsLoading(true);
-          const { data } = await axios.get(`${AUTH_API_URL}`)
-          setUsers(data)
-        } catch (error) {
-          console.log(error.message)
-          setError(error.message)
-        } finally {
-          setIsLoading(false)
-        }
+    (async () => {
+      try {
+        const { data } = await axios.get(`${AUTH_API_URL}users`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUsers(data);
+        // console.log(data);
+      } catch (error) {
+        console.log(error.message);
+        setError(error.message);
       }
-    )();
+    })();
   }, []);
 
   const handleDelete = (id) => {
     try {
-      axios.delete(`${AUTH_API_URL}${id}`)
-      setUsers(users.filter((store) => store.id !== id));
+      axios.delete(`${AUTH_API_URL}users/${id}`);
+      setUsers(users.filter((item) => item._id !== id));
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
-  }
+  };
 
   return (
     <div className="user__list">

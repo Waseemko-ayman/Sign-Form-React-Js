@@ -14,10 +14,10 @@ const Table = ({ columns, data, isLoading }) => {
         </thead>
         {!isLoading && (
           <tbody>
-            {data.map((row) => (
-              <tr key={row.id}>
+            {data?.users?.map((row) => (
+              <tr key={row._id}>
                 {columns.map((column) => (
-                  <td key={`${row.id + column.key}`}>
+                  <td key={`${row._id + column.key}`}>
                     {column.render ? column.render(row) : row[column.key]}
                   </td>
                 ))}
