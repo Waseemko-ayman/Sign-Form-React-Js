@@ -25,7 +25,7 @@
   width: 173px;
 }
 
-.card.card:nth-child(2):hover > img {
+.card:nth-child(2):hover > img {
   transform: scale(1.1) translate(5px, -10px);
 }
 
@@ -34,7 +34,7 @@
   border-radius: 0 0 0 55px;
 }
 
-.card.card:nth-child(3):hover > img {
+.card:nth-child(3):hover > img {
   transform: scale(1.1) translate(5px, -10px);
 }
 
@@ -54,8 +54,8 @@
   filter: drop-shadow(0 0 20px #FFF);
 }
 
-.card:nth-child(2) .text img {
-  width: 200px;
+.card:nth-child(3) .text img {
+  width: 170px;
   padding-right: 10px;
 }
 

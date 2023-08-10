@@ -10,6 +10,7 @@ import { useAuthContext } from "../../Context/AuthContext";
 const UsersListPage = () => {
   const [users, setUsers] = useState([]);
   const { isLoading, token } = useAuthContext();
+  // console.log(token)
   const [, setError] = useState(null);
 
   useEffect(() => {
@@ -30,7 +31,8 @@ const UsersListPage = () => {
   const handleDelete = (id) => {
     try {
       axios.delete(`${AUTH_API_URL}users/${id}`);
-      setUsers(users.filter((item) => item._id !== id));
+      setUsers(users.users.filter((item) => item._id !== id));
+      console.log("success")
     } catch (error) {
       console.log(error.message);
     }

@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { ROLES } from "../Constants";
 import { AUTH_ACTIONS, AUTH_API_PATHS } from "../Constants/auth";
 import axios from "axios";
@@ -15,7 +15,6 @@ const initialState = {
 };
 
 const reduce = (state, action) => {
-  console.log(state)
   switch (action.type) {
     case AUTH_ACTIONS.SET_LOADING:
       return {
@@ -24,11 +23,11 @@ const reduce = (state, action) => {
       };
 
     case AUTH_ACTIONS.AUTHORIZE:
-      const token = action?.payload?.token || state?.token;
+      const token = action?.payload?.token || state?.token || localStorage.getItem("token");
       const role = action?.payload?.isAdmin ? ROLES.ADMIN : ROLES.USER;
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
-      console.log('hjazi ',action.payload)
+      // console.log('hjazi ',action.payload)
       localStorage.setItem("user", JSON.stringify(action.payload));
       return {
         isAuth: true,
@@ -65,7 +64,7 @@ const useAuth = () => {
     dispatch({ type: AUTH_ACTIONS.SET_LOADING });
     try {
       const { data } = await axios.post(AUTH_API_URL + AUTH_API_PATHS.LOGIN, body);
-      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data || data?.data });
+      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
       Swal.fire({
         icon : "success",
         title: 'Logged in Successfully',
@@ -107,14 +106,21 @@ const useAuth = () => {
 
   // Get Profile Data
   const getProfileData = async () => {
+    const token = localStorage.getItem('token');
+    if(!token) return
     dispatch({ type: AUTH_ACTIONS.SET_LOADING });
-    try {
-      const { data } = await axios.get(AUTH_API_URL + AUTH_API_PATHS.PROFILE, config);
-      return data
-    } catch (error) {
-      dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
-    }
+      try {
+        const { data } = await axios.get(AUTH_API_URL + AUTH_API_PATHS.PROFILE, config);
+        dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
+        return data
+      } catch (error) {
+        dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
+      }
   }
+
+  useEffect(()=>{
+    getProfileData();
+  }, [])
 
   return {
     ...state,

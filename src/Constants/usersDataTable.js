@@ -16,7 +16,7 @@ export const USERS_COLUMNS = (handleDelete) => [
     title: 'Actions',
     render: (data) =>
     <div onClick={(e) => e.stopPropagation()}>
-      <button onClick={() => handleDelete(data.id)}>Delete</button>
+      <button onClick={() => handleDelete(data._id)}>Delete</button>
     </div>
   }
 ]

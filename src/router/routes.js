@@ -29,66 +29,6 @@ export const authPages = [
   },
 ];
 
-// export const adminPages = [
-//   {
-//     path: PATHS.USER.ROOT,
-//     element: <AdminGuard />,
-//     children: [
-//       {
-//         index: true,
-//         element: (
-//           <MainLayout>
-//             <HomePage />
-//           </MainLayout>
-//         ),
-//       },
-//       {
-//         path: PATHS.USER.PROFILE,
-//         element: (
-//           <MainLayout>
-//             <ProfilePage />
-//           </MainLayout>
-//         ),
-//       },
-//       {
-//         path: PATHS.USER.USERSLIST,
-//         element: (
-//           <MainLayout>
-//             <UsersListPage />
-//           </MainLayout>
-//         ),
-//       },
-//     ],
-//   },
-//   ...authPages,
-// ];
-
-// export const userPages = [
-//   {
-//     path: PATHS.USER.ROOT,
-//     element: <UserGuard />,
-//     children: [
-//       {
-//         index: true,
-//         element: (
-//           <MainLayout>
-//             <HomePage />
-//           </MainLayout>
-//         ),
-//       },
-//       {
-//         path: PATHS.USER.PROFILE,
-//         element: (
-//           <MainLayout>
-//             <ProfilePage />
-//           </MainLayout>
-//         ),
-//       },
-//     ],
-//   },
-//   ...authPages,
-// ];
-
 export const GuestRoutes = [...authPages];
 
 export const routers = [

@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
 import "./style.css";
 import Title from "../../Components/Title";
 import profileImg from "../../assets/profileImage.jpg";
-import { useAuthContext } from "../../Context/AuthContext";
+import useAuth from "../../Hook/useAuth";
 
 const ProfilePage = () => {
-  const { getProfileData, isLoading } = useAuthContext();
-  const [info, setInfo] = useState();
-
-  useEffect(() => {
-    (async () => {
-      const item = await getProfileData();
-      setInfo(item);
-    })();
-  }, []);
+  const { user, isLoading } = useAuth();
+  console.log(user)
 
   return (
     <div className="prfoile__page">
@@ -24,11 +16,11 @@ const ProfilePage = () => {
             <tbody>
               <tr>
                 <th>Name</th>
-                <td>{info?.name}</td>
+                <td>{user?.name}</td>
               </tr>
               <tr>
                 <th>Email</th>
-                <td>{info?.email}</td>
+                <td>{user?.email}</td>
               </tr>
             </tbody>
           </table>

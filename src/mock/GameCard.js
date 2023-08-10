@@ -14,14 +14,14 @@ export const GAME_CARD_DATA = [
   },
   {
     id: 2,
-    Logo: GameLogo2,
+    // Logo: GameLogo2,
     person: GamePerson2,
     description:
       "Be part of the Suicide Squad and kill the Justice League!-Amanda Waller",
   },
   {
     id: 3,
-    // Logo: {GodOfWarse},
+    Logo: GameLogo2,
     person: GamePerson3,
     description:
       "Miles Morales discovers powers from his mentor, Peter Parker. Master his unique, bio-electric venom blast attacks.",

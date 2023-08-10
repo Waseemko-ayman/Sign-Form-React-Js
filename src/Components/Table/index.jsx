@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 
 const Table = ({ columns, data, isLoading }) => {
+  console.log(data)
   return (
     <div className="table__component">
       <table>
