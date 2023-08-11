@@ -108,7 +108,7 @@ const Sidebar = () => {
         )}
       </ul>
       <div className="theme">
-        <button onClick={() => theme == THEMES.LIGHT && toggleTheme()}>
+        <button onClick={() => theme === THEMES.LIGHT && toggleTheme()}>
           <i
             style={
               theme === THEMES.DARK
@@ -122,7 +122,7 @@ const Sidebar = () => {
             className="fa-regular fa-moon"
           ></i>
         </button>
-        <button onClick={() => theme == THEMES.DARK && toggleTheme()}>
+        <button onClick={() => theme === THEMES.DARK && toggleTheme()}>
           <i
             style={
               theme === THEMES.LIGHT

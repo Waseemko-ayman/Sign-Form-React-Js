@@ -5,7 +5,6 @@ import Inputs from "../../Components/Inputs";
 import Button from "../../Components/Button";
 import WhiteLogo from "../../assets/white-logo.svg";
 import cornerImage from "../../assets/corner-image.svg";
-import EyeImg from "../../assets/eye.svg";
 import { PATHS } from "../../router/paths";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -25,27 +24,21 @@ export const formSchema = Yup.object({
     .matches(emailRegex, "Enter Correct Email")
     .required("Email is required"),
 
-  // password: Yup.string()
-  //   .min(8, "Password must be at least 8 characters long")
-  //   .matches(
-  //     passwordRegex,
-  //     "password should be more that 8 and contains small and capital and number and special character"
-  //   )
-  //   .required("Password is required"),
-
-  // repeatPassword: Yup.string()
-  //   .matches(
-  //     passwordRegex,
-  //     "password should be more that 8 and contains small and capital and number and special character"
-  //   )
-  //   .required("RePassword is required")
-  //   .oneOf([Yup.ref('password'), null], 'Passwords must match'),
-
   password: Yup.string()
-  .required("password should be more that 8 and contains small and capital and number and special character"),
+    .min(8, "Password must be at least 8 characters long")
+    .matches(
+      passwordRegex,
+      "password should be more that 8 and contains small and capital and number and special character"
+    )
+    .required("Password is required"),
+
   repeatPassword: Yup.string()
-  .required("password should be more that 8 and contains small and capital and number and special character")
-  .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+    .matches(
+      passwordRegex,
+      "password should be more that 8 and contains small and capital and number and special character"
+    )
+    .required("RePassword is required")
+    .oneOf([Yup.ref('password'), null], 'Passwords must match'),
 
   checked: Yup.boolean().oneOf(
     [true],

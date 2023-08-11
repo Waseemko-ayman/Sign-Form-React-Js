@@ -12,7 +12,6 @@ import LinkedInImg from "../../assets/linkedin.svg";
 import GithubImg from "../../assets/github.svg";
 import joystick from "../../assets/joystick.png";
 import logo from "../../assets/logo.svg";
-import EyeImg from "../../assets/eye.svg";
 import { useAuthContext } from "../../Context/AuthContext";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";

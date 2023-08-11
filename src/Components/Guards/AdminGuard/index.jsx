@@ -1,6 +1,6 @@
 import React from 'react'
 import { ROLES } from '../../../Constants';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useAuthContext } from '../../../Context/AuthContext';
 import { PATHS } from '../../../router/paths';
 

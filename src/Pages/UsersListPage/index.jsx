@@ -67,13 +67,13 @@ const UsersListPage = () => {
           isLoading={isLoading}
         />
         <div className="pages__numbers">
-          <button onClick={prevSubmit} disabled={users.page == 1 ? true : false}>
+          <button onClick={prevSubmit} disabled={users.page === 1 ? true : false}>
             prev
           </button>
           <button>{users.page}</button>
           <button
             onClick={nextSubmit}
-            disabled={users.page == users.pages ? true : false}>
+            disabled={users.page === users.pages ? true : false}>
             next
           </button>
         </div>

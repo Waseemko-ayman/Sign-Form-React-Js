@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect } from 'react'
+import React, { createContext, useContext } from 'react'
 import useAuth from '../Hook/useAuth';
 
 const AuthContext = createContext(null);
