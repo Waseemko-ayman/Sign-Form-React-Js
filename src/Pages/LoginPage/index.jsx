@@ -18,20 +18,21 @@ import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// const passwordRegex =
-//   /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
+const passwordRegex =
+  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 
 const formSchema = Yup.object({
   email: Yup.string()
     .matches(emailRegex, "Enter Correct Email")
     .required("Email is required"),
-  // password: Yup.string().matches(
-  //   passwordRegex,
-  //   "password should be more that 8 and contains small and capital and number and special character"
-  // ),
-  password: Yup.string().required(
-    "password should be more that 8 and contains small and capital and number and special character"
-  ),
+
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters long")
+    .matches(
+      passwordRegex,
+      "password should be more that 8 and contains small and capital and number and special character"
+    )
+    .required("Password is required"),
 });
 
 const LogInPage = () => {
@@ -54,7 +55,7 @@ const LogInPage = () => {
 
   const hadnleShow = () => {
     setShow(!show);
-  }
+  };
 
   return (
     <div className="logIn-page">
@@ -93,7 +94,7 @@ const LogInPage = () => {
               iconHidden
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
-            
+
             <Inputs
               label="Enter your Password*"
               type={show ? "text" : "password"}
@@ -101,7 +102,7 @@ const LogInPage = () => {
               register={register}
               name="password"
               iconClassName={show ? "fa-solid fa-eye-slash" : "fa-solid fa-eye"}
-              hadnleShow= {hadnleShow}
+              hadnleShow={hadnleShow}
             />
             {errors.password && (
               <p className="error">{errors.password.message}</p>
