@@ -14,31 +14,34 @@ import { useAuthContext } from "../../Context/AuthContext";
 import { useState } from "react";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex =
-  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 
 export const formSchema = Yup.object({
   name: Yup.string().required("Username is required"),
-
+  
   email: Yup.string()
     .matches(emailRegex, "Enter Correct Email")
     .required("Email is required"),
 
   password: Yup.string()
+    .required("Password is required")
     .min(8, "Password must be at least 8 characters long")
     .matches(
-      passwordRegex,
-      "password should be more that 8 and contains small and capital and number and special character"
+      RegExp("(.*[a-z].*)"),
+      "Password must contain at least one Lowercase letter"
     )
-    .required("Password is required"),
+    .matches(
+      RegExp("(.*[A-Z].*)"),
+      "Password must contain at least one Uppercase letter"
+    )
+    .matches(RegExp("(.*\\d.*)"), "Password must contain at least one Number ")
+    .matches(
+      RegExp('[!@#$%^&*(),.?":{}|<>]'),
+      "Password must contain at least one Special character"
+    ),
 
   repeatPassword: Yup.string()
-    .matches(
-      passwordRegex,
-      "password should be more that 8 and contains small and capital and number and special character"
-    )
-    .required("RePassword is required")
-    .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+    .oneOf([Yup.ref("password"), null], "Passwords must match")
+    .required("Repeat password is required"),
 
   checked: Yup.boolean().oneOf(
     [true],
