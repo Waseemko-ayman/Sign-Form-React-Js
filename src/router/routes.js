@@ -8,7 +8,7 @@ import GuestGuards from "../Components/Guards/GuestGuards";
 import UsersListPage from "../Pages/UsersListPage";
 import MainLayout from "../Components/MainLayout";
 import AdminGuard from "../Components/Guards/AdminGuard";
-import LogInPage from "../Pages/LogInPage";
+import LogInPage from "../Pages/LoginPage";
 
 export const authPages = [
   {
