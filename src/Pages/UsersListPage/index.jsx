@@ -3,7 +3,6 @@ import "./style.css";
 import Title from "../../Components/Title";
 import Table from "../../Components/Table";
 import { USERS_COLUMNS } from "../../Constants/usersDataTable";
-// import axios from "axios";
 import { AUTH_API_URL } from "../../config/api";
 import { useAuthContext } from "../../Context/AuthContext";
 import useAPI from "../../Hook/useAPI";

@@ -5,10 +5,10 @@ import UserGuard from "../Components/Guards/UserGuard";
 import { PATHS } from "./paths";
 import SignUpPage from "../Pages/SignUpPage";
 import GuestGuards from "../Components/Guards/GuestGuards";
-import LogInPage from "../Pages/LogInPage";
 import UsersListPage from "../Pages/UsersListPage";
 import MainLayout from "../Components/MainLayout";
 import AdminGuard from "../Components/Guards/AdminGuard";
+import LogInPage from "../Pages/LogInPage";
 
 export const authPages = [
   {
