@@ -53,15 +53,15 @@ const LogInPage = () => {
     // console.log(data);
   };
 
-  // const hadnleShow = () => {
-  //   setShow(!show);
-  // }
+  const hadnleShow = () => {
+    setShow(!show);
+  }
 
   return (
     <div className="logIn-page">
       <div className="logIn-info-box">
         <Logo logoImage={logo} />
-        <Paragraph cornerImage={joystick} />
+        <Paragraph cornerImage={joystick} bigImg />
       </div>
       <div className="logIn-box">
         <div>
@@ -91,17 +91,18 @@ const LogInPage = () => {
               placeholder="Write your email"
               register={register}
               name="email"
-              imageHidden
+              iconHidden
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
-
+            
             <Inputs
               label="Enter your Password*"
               type={show ? "text" : "password"}
               placeholder="•••••••••"
               register={register}
               name="password"
-              imageSrc={show ? EyeImg : EyeImg}
+              iconClassName={show ? "fa-solid fa-eye-slash" : "fa-solid fa-eye"}
+              hadnleShow= {hadnleShow}
             />
             {errors.password && (
               <p className="error">{errors.password.message}</p>

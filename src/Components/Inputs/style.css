@@ -32,11 +32,13 @@
   font-family: 'Inter', sans-serif;
 }
 
-.input-box .input-div img {
+.input-box .input-div i {
+  font-size: 20px;
+  color: #696F79;
   cursor: pointer;
 }
 
-.image__hidden {
+.icon__hidden {
   display: none;
 }
 

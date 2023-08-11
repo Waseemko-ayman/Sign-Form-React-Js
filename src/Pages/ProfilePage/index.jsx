@@ -5,12 +5,12 @@ import useAuth from "../../Hook/useAuth";
 
 const ProfilePage = () => {
   const { user, isLoading } = useAuth();
-  console.log(user)
+  console.log(user);
 
   return (
     <div className="prfoile__page">
       <Title textTitle="Your Profile" />
-      {isLoading && (
+      {!isLoading && (
         <div className="profile__info">
           <table>
             <tbody>

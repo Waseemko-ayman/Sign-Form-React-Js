@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Table = ({ columns, data, isLoading, onRowClick }) => {
+const Table = ({ columns, data, isLoading }) => {
   return (
     <div className="table__component">
       <table>
@@ -15,7 +15,7 @@ const Table = ({ columns, data, isLoading, onRowClick }) => {
         {!isLoading && (
           <tbody>
             {data?.map((row, index) => (
-              <tr key={row._id + index} onClick={() => onRowClick(row)}>
+              <tr key={row._id + index}>
                 {columns.map((column, index) => (
                   <td key={`${row._id + column.key + index}`}>
                     {column.render

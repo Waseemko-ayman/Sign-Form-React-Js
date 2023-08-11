@@ -122,7 +122,7 @@ const useAuth = () => {
   const getProfileData = async () => {
     const token = localStorage.getItem('token');
     if(!token) return
-    dispatch({ type: AUTH_ACTIONS.SET_LOADING });
+      dispatch({ type: AUTH_ACTIONS.SET_LOADING });
       try {
         const { data } = await axios.get(AUTH_API_URL + AUTH_API_PATHS.PROFILE, config);
         dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
@@ -132,11 +132,7 @@ const useAuth = () => {
       }
   }
 
-  useEffect(() => {
-    getProfileData();
-  }, [])
-
-  console.log(state)
+  // console.log(state)
 
   return {
     ...state,

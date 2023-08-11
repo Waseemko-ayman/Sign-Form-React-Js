@@ -6,12 +6,12 @@ import "./style.css";
 const CardsSection = () => {
   return (
     <div className="game__cards">
-      {GAME_CARD_DATA.map(({ id, Logo, person, description }) => (
+      {GAME_CARD_DATA.map(({ id, Logo, person, description, imgClassName }) => (
         <GameCard
           key={id}
-          GamePerson={person}
-          GameLogo={Logo}
-          GameDescription={description}
+          gamePerson={person}
+          gameLogo={Logo}
+          gameDescription={description}
         />
       ))}
     </div>

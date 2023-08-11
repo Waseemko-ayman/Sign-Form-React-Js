@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-const GameCard = ({ GamePerson, GameLogo, GameDescription, imageHidden }) => {
+const GameCard = ({ gamePerson, gameLogo, gameDescription, imageHidden }) => {
   return (
     <div className="card">
-      <img src={GamePerson} alt="GamePerson" />
+      <img src={gamePerson} alt="GamePerson" />
       <div className="text">
-        <img src={GameLogo} alt="logo" />
-        <p>{GameDescription}</p>
+        <img src={gameLogo} alt="logo" />
+        <p>{gameDescription}</p>
       </div>
     </div>
   );

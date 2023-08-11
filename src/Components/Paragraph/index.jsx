@@ -1,7 +1,7 @@
 import React from 'react'
 import "./style.css";
 
-const Paragraph = ({ cornerImage, white }) => {
+const Paragraph = ({ cornerImage, white, bigImg }) => {
   return (
     <div className="paragraph">
       <span>“</span>
@@ -10,7 +10,7 @@ const Paragraph = ({ cornerImage, white }) => {
         of them again, so I imagine a lot of things about their lives... about the day ahead of them.
       </p>
       <h3 className={white ? "white__color" : ""}>Hideo Kojima</h3>
-      <img src={cornerImage} alt="corner-img" />
+      <img src={cornerImage} alt="corner-img" className={`${bigImg ? "big__img" : ""}`} />
     </div>
   )
 } 

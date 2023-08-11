@@ -14,7 +14,6 @@ export const GAME_CARD_DATA = [
   },
   {
     id: 2,
-    // Logo: GameLogo2,
     person: GamePerson2,
     description:
       "Be part of the Suicide Squad and kill the Justice League!-Amanda Waller",

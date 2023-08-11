@@ -62,3 +62,15 @@
 .white__color {
   color: white !important;
 }
+
+.big__img {
+  width: 200px !important;
+  margin-top: -180px !important;
+  margin-right: -60px !important;
+}
+
+@media (max-width: 768px) {
+  .big__img {
+    display: none;
+  }
+}

@@ -12,32 +12,41 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
 import { useAuthContext } from "../../Context/AuthContext";
+import { useState } from "react";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// const passwordRegex =
-//   /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
+const passwordRegex =
+  /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 
 export const formSchema = Yup.object({
   name: Yup.string().required("Username is required"),
+
   email: Yup.string()
     .matches(emailRegex, "Enter Correct Email")
     .required("Email is required"),
-  phone: Yup.number()
-    .positive()
-    .integer()
-    .min(10)
-    .max(13)
-    .required("Phone is required"),
-  // password: Yup.string().matches(
-  //   passwordRegex,
-  //   "password should be more that 8 and contains small and capital and number and special character"
-  // ),
-  // repeatPassword: Yup.string().matches(
-  //   passwordRegex,
-  //   "password should be more that 8 and contains small and capital and number and special character"
-  // ),
-  password: Yup.string().required("password should be more that 8 and contains small and capital and number and special character"),
-  repeatPassword: Yup.string().required("password should be more that 8 and contains small and capital and number and special character"),
+
+  // password: Yup.string()
+  //   .min(8, "Password must be at least 8 characters long")
+  //   .matches(
+  //     passwordRegex,
+  //     "password should be more that 8 and contains small and capital and number and special character"
+  //   )
+  //   .required("Password is required"),
+
+  // repeatPassword: Yup.string()
+  //   .matches(
+  //     passwordRegex,
+  //     "password should be more that 8 and contains small and capital and number and special character"
+  //   )
+  //   .required("RePassword is required")
+  //   .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+
+  password: Yup.string()
+  .required("password should be more that 8 and contains small and capital and number and special character"),
+  repeatPassword: Yup.string()
+  .required("password should be more that 8 and contains small and capital and number and special character")
+  .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+
   checked: Yup.boolean().oneOf(
     [true],
     "You must agree to the terms and conditions"
@@ -45,8 +54,12 @@ export const formSchema = Yup.object({
 });
 
 const SignUpPage = () => {
+  const [showPass, setShowPass] = useState(false);
+  const [showRePass, setShowRePass] = useState(false);
+
   const { signup, isLoading } = useAuthContext();
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -60,6 +73,14 @@ const SignUpPage = () => {
     signup(data);
     console.log(data);
     reset();
+  };
+
+  const hadnleShowPass = () => {
+    setShowPass(!showPass);
+  };
+
+  const hadnleShowRePass = () => {
+    setShowRePass(!showRePass);
   };
 
   return (
@@ -88,52 +109,50 @@ const SignUpPage = () => {
                 placeholder="Enter username"
                 register={register}
                 name="name"
-                // {...register("name")}
-                imageHidden
+                iconHidden
               />
-              {errors.name && (
-                <p className="error">{errors.name.message}</p>
-              )}
+              {errors.name && <p className="error">{errors.name.message}</p>}
+
               <Inputs
                 type="email"
                 label="Email address*"
                 placeholder="Enter email address"
                 register={register}
                 name="email"
-                imageHidden
+                iconHidden
               />
               {errors.email && <p className="error">{errors.email.message}</p>}
+
               <Inputs
-                type="number"
-                label="Phone*"
-                placeholder="Enter phone"
-                register={register}
-                name="phone"
-                imageHidden
-              />
-              {errors.phone && <p className="error">{errors.phone.message}</p>}
-              <Inputs
-                type="password"
+                type={showPass ? "text" : "password"}
                 label="Create Password*"
                 placeholder="Password"
                 register={register}
                 name="password"
-                imageSrc={EyeImg}
+                iconClassName={
+                  showPass ? "fa-solid fa-eye-slash" : "fa-solid fa-eye"
+                }
+                hadnleShow={hadnleShowPass}
               />
               {errors.password && (
                 <p className="error">{errors.password.message}</p>
               )}
+
               <Inputs
-                type="password"
+                type={showRePass ? "text" : "password"}
                 label="Repeat password*"
                 placeholder="Repeat password"
                 register={register}
                 name="repeatPassword"
-                imageSrc={EyeImg}
+                iconClassName={
+                  showRePass ? "fa-solid fa-eye-slash" : "fa-solid fa-eye"
+                }
+                hadnleShow={hadnleShowRePass}
               />
               {errors.repeatPassword && (
                 <p className="error">{errors.repeatPassword.message}</p>
               )}
+
               <div className="checkbox">
                 <div>
                   <input
