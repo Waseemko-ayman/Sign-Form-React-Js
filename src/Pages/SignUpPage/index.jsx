@@ -1,7 +1,7 @@
 import "./style.css";
 import Logo from "../../Components/Logo";
 import Paragraph from "../../Components/Paragraph";
-// import Inputs from "../../Components/Inputs";
+import Inputs from "../../Components/Inputs";
 import Button from "../../Components/Button";
 import WhiteLogo from "../../assets/white-logo.svg";
 import cornerImage from "../../assets/corner-image.svg";
@@ -50,6 +50,7 @@ const SignUpPage = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(formSchema),
@@ -58,6 +59,7 @@ const SignUpPage = () => {
   const onSubmit = async (data) => {
     signup(data);
     console.log(data);
+    reset();
   };
 
   return (
@@ -80,47 +82,53 @@ const SignUpPage = () => {
               </p>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <input
+              <Inputs
                 type="text"
                 label="Username*"
                 placeholder="Enter username"
-                {...register("name")}
+                register={register}
+                name="name"
+                // {...register("name")}
                 imageHidden
               />
               {errors.name && (
                 <p className="error">{errors.name.message}</p>
               )}
-              <input
+              <Inputs
                 type="email"
                 label="Email address*"
                 placeholder="Enter email address"
-                {...register("email")}
+                register={register}
+                name="email"
                 imageHidden
               />
               {errors.email && <p className="error">{errors.email.message}</p>}
-              <input
+              <Inputs
                 type="number"
                 label="Phone*"
                 placeholder="Enter phone"
-                {...register("phone")}
+                register={register}
+                name="phone"
                 imageHidden
               />
               {errors.phone && <p className="error">{errors.phone.message}</p>}
-              <input
+              <Inputs
                 type="password"
                 label="Create Password*"
                 placeholder="Password"
-                {...register("password")}
+                register={register}
+                name="password"
                 imageSrc={EyeImg}
               />
               {errors.password && (
                 <p className="error">{errors.password.message}</p>
               )}
-              <input
+              <Inputs
                 type="password"
                 label="Repeat password*"
                 placeholder="Repeat password"
-                {...register("repeatPassword")}
+                register={register}
+                name="repeatPassword"
                 imageSrc={EyeImg}
               />
               {errors.repeatPassword && (
@@ -131,7 +139,8 @@ const SignUpPage = () => {
                   <input
                     type="checkbox"
                     id="checkbox"
-                    {...register("checked")}
+                    register={register}
+                    name="checked"
                     defaultChecked
                   />
                   <label htmlFor="checkbox">

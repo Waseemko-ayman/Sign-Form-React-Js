@@ -3,13 +3,18 @@ import { ROLES } from "../Constants";
 import { AUTH_ACTIONS, AUTH_API_PATHS } from "../Constants/auth";
 import axios from "axios";
 import { AUTH_API_URL } from "../config/api";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
+const getisAuth = () => localStorage.getItem("isAuth") || false;
+const getUser = () => JSON.parse(localStorage.getItem("user")) || null;
+const getToken = () => localStorage.getItem("token") || null;
+const getRole = () => localStorage.getItem("role") || ROLES.GUEST;
 
 const initialState = {
-  isAuth: false,
-  user: null,
-  token: null,
-  role: ROLES.GUEST,
+  isAuth: getisAuth(),
+  user: getUser(),
+  token: getToken(),
+  role: getRole(),
   isLoading: false,
   error: null,
 };
@@ -27,11 +32,12 @@ const reduce = (state, action) => {
       const role = action?.payload?.isAdmin ? ROLES.ADMIN : ROLES.USER;
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
+      localStorage.setItem("isAuth", true);
       // console.log('hjazi ',action.payload)
       localStorage.setItem("user", JSON.stringify(action.payload));
       return {
         isAuth: true,
-        user: action.payload,
+        user: action.payload.user,
         token: token,
         role: role,
         isLoading: false,
@@ -42,7 +48,15 @@ const reduce = (state, action) => {
       ["token", "user", "role"].forEach((item) =>
         localStorage.removeItem(item)
       );
-      return initialState;
+      return {
+        isAuth: false,
+        user: null,
+        token: null,
+        role: ROLES.GUEST,
+        isLoading: false,
+        error: null,
+      };
+      ; 
 
     case AUTH_ACTIONS.SET_ERROR:
       return {
@@ -118,9 +132,11 @@ const useAuth = () => {
       }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getProfileData();
   }, [])
+
+  console.log(state)
 
   return {
     ...state,

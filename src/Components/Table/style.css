@@ -2,7 +2,7 @@
   border-collapse: collapse;
   max-width: 100%;
   width: calc(100% - 100px);
-  margin: 0 auto;
+  margin: 15px auto;
   white-space: nowrap;
   background-color: #fff;
   border-radius: 10px;

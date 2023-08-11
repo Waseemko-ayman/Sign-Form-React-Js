@@ -14,7 +14,7 @@ const Header = () => {
         <div className="title">
           <div className="text">
             <span>Welcome back,</span>
-            <span>{user?.name}!</span>
+            <span>{user?.name} !</span>
           </div>
           <div className="image">
             <img src={AccontImage} alt="user" />

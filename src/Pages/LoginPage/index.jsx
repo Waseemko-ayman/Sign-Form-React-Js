@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import Logo from "../../Components/Logo";
 import Paragraph from "../../Components/Paragraph";
-// import Inputs from "../../Components/Inputs";
+import Inputs from "../../Components/Inputs";
 import Button from "../../Components/Button";
 import { PATHS } from "../../router/paths";
 import { useNavigate } from "react-router-dom";
@@ -50,7 +50,7 @@ const LogInPage = () => {
 
   const onSubmit = async (data) => {
     login(data);
-    console.log(data);
+    // console.log(data);
   };
 
   // const hadnleShow = () => {
@@ -85,20 +85,22 @@ const LogInPage = () => {
             <span></span>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input
+            <Inputs
               label="Your email"
               type="email"
               placeholder="Write your email"
-              {...register("email")}
+              register={register}
+              name="email"
               imageHidden
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
 
-            <input
+            <Inputs
               label="Enter your Password*"
               type={show ? "text" : "password"}
               placeholder="•••••••••"
-              {...register("password")}
+              register={register}
+              name="password"
               imageSrc={show ? EyeImg : EyeImg}
             />
             {errors.password && (
