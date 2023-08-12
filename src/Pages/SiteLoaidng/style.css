@@ -1,0 +1,41 @@
+.main__loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 328px) {
+  .main__loading {
+    flex-wrap: wrap;
+  }
+}
+
+.main__loading img {
+  max-width: 100%;
+  width: 94.365px;
+}
+
+@media (max-width: 768px) {
+  .main__loading img {
+    width: 80px;
+  }
+}
+
+.main__loading span {
+  color: #1565D8;
+  font-family: 'Righteous', cursive;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+  .main__loading span {
+    font-size: 60px;
+  }
+}
