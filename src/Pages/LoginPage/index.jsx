@@ -23,23 +23,8 @@ const formSchema = Yup.object({
   email: Yup.string()
     .matches(emailRegex, "Enter Correct Email")
     .required("Email is required"),
-
     password: Yup.string()
     .required("Password is required")
-    .min(8, "Password must be at least 8 characters long")
-    .matches(
-      RegExp("(.*[a-z].*)"),
-      "Password must contain at least one Lowercase letter"
-    )
-    .matches(
-      RegExp("(.*[A-Z].*)"),
-      "Password must contain at least one Uppercase letter"
-    )
-    .matches(RegExp("(.*\\d.*)"), "Password must contain at least one Number ")
-    .matches(
-      RegExp('[!@#$%^&*(),.?":{}|<>]'),
-      "Password must contain at least one Special character"
-    ),
 });
 
 const LogInPage = () => {
