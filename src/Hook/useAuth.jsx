@@ -33,7 +33,6 @@ const reduce = (state, action) => {
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
       localStorage.setItem("isAuth", true);
-      // console.log('hjazi ',action.payload)
       localStorage.setItem("user", JSON.stringify(action.payload));
       return {
         isAuth: true,
@@ -45,7 +44,7 @@ const reduce = (state, action) => {
       };
 
     case AUTH_ACTIONS.LOGOUT:
-      ["token", "user", "role"].forEach((item) =>
+      ["token", "user", "role", "isAuth"].forEach((item) =>
         localStorage.removeItem(item)
       );
       return {
@@ -56,7 +55,6 @@ const reduce = (state, action) => {
         isLoading: false,
         error: null,
       };
-      ; 
 
     case AUTH_ACTIONS.SET_ERROR:
       return {
