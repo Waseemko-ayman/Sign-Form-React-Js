@@ -7,17 +7,17 @@ const Table = ({ columns, data, isLoading }) => {
       <table>
         <thead>
           <tr>
-            {columns.map((column, index) => (
-              <th key={column.key + index}>{column.title}</th>
+            {columns.map((column) => (
+              <th key={column.key}>{column.title}</th>
             ))}
           </tr>
         </thead>
         {!isLoading && (
           <tbody>
-            {data?.map((row, index) => (
-              <tr key={row._id + index}>
-                {columns.map((column, index) => (
-                  <td key={`${row._id + column.key + index}`}>
+            {data?.map((row) => (
+              <tr key={row._id}>
+                {columns.map((column) => (
+                  <td key={`${row._id + column.key}`}>
                     {column.render
                       ? column.render(row)
                       : Array.isArray(row[column.key])

@@ -78,7 +78,7 @@ const LogInPage = () => {
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Inputs
-              label="Your email"
+              label="Your email*"
               type="email"
               placeholder="Write your email"
               register={register}

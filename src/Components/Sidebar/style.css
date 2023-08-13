@@ -24,7 +24,9 @@
   box-shadow: 2px 4px 4px 0px var(--forth-color) inset;
 }
 
-.sidebar__games svg {
+.sidebar__games > img {
+  max-width: 100%;
+  width: 60px;
   cursor: pointer;
 }
 

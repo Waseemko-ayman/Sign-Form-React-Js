@@ -36,7 +36,7 @@ const reduce = (state, action) => {
       localStorage.setItem("user", JSON.stringify(action.payload));
       return {
         isAuth: true,
-        user: action.payload.user,
+        user: action.payload,
         token: token,
         role: role,
         isLoading: false,
@@ -107,7 +107,7 @@ const useAuth = () => {
         timer: 2000
       });
     } catch (error) {
-      dispatch({ typeof: AUTH_ACTIONS.SET_ERROR, payload: error.message });
+      dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
   };
 

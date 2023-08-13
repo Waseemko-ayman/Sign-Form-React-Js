@@ -7,7 +7,7 @@ import { PATHS } from '../../../router/paths';
 const AdminGuard = ({ children }) => {
   const { role } = useAuthContext();
   if(role === ROLES.ADMIN) return children
-    return <Navigate to={PATHS.HOME} replace={true} />
+    return <Navigate to={PATHS.LOGIN} replace={true} />
 }
 
 export default AdminGuard

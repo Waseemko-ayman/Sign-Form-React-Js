@@ -2,10 +2,20 @@ import "./style.css";
 import Title from "../../Components/Title";
 import profileImg from "../../assets/profileImage.jpg";
 import useAuth from "../../Hook/useAuth";
+import { useEffect, useState } from "react";
 
 const ProfilePage = () => {
-  const { user, isLoading } = useAuth();
-  console.log(user);
+  const { getProfileData, user } = useAuth();
+  // console.log(user);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      await getProfileData();
+      setIsLoading(false);
+    })();
+  }, []);
 
   return (
     <div className="prfoile__page">
