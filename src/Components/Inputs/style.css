@@ -6,7 +6,7 @@
 }
 
 .input-box label {
-  color: #696F79;
+  color: #696f79;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -15,9 +15,9 @@
 }
 
 .input-box .input-div {
-  padding: 23px 30px 24px;
+  padding-right: 15px;
   border-radius: 6px;
-  border: 1px solid #8692A6;
+  border: 1px solid #8692a6;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -25,6 +25,7 @@
 }
 
 .input-box input {
+  padding: 15px;
   font-size: 18px;
   flex: 1;
   border: none;
@@ -34,7 +35,7 @@
 
 .input-box .input-div i {
   font-size: 20px;
-  color: #696F79;
+  color: #696f79;
   cursor: pointer;
 }
 
@@ -43,7 +44,7 @@
 }
 
 .input-box input::placeholder {
-  color: #8692A6;
+  color: #8692a6;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   font-style: normal;

@@ -39,7 +39,7 @@
 }
 
 .logIn-page .logIn-info-box .logo span {
-  color: #1565D8;
+  color: #1565d8;
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
@@ -53,7 +53,7 @@
 }
 
 .logIn-page .logIn-info-box .paragraph span {
-  color: #BABABA;
+  color: #bababa;
 }
 
 .logIn-page .logIn-info-box .paragraph p {
@@ -62,7 +62,7 @@
 
 .logIn-page .logIn-info-box .paragraph p,
 .logIn-page .logIn-info-box .paragraph h3 {
-  color: #696F79;
+  color: #696f79;
 }
 
 .logIn-page .logIn-info-box .paragraph img {
@@ -139,7 +139,7 @@
 .logIn-page .logIn-box .title p {
   max-width: 100%;
   width: 411px;
-  color: #8692A6;
+  color: #8692a6;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -155,11 +155,11 @@
 }
 
 .logIn-page .logIn-box .title ul::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 1px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   z-index: -1;
 }
 
@@ -174,7 +174,7 @@
   width: 65px;
   height: 65px;
   border-radius: 6px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: 0.5s;
@@ -192,19 +192,19 @@
 .logIn-page .logIn-box .title span {
   width: 100%;
   height: 1px;
-  background-color: #F5F5F5;
+  background-color: #e4e4e4;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
 .logIn-page .logIn-box .title span::after {
-  content: "Or";
+  content: 'Or';
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: #BABABA;
+  color: #bababa;
   background-color: white;
   padding: 0 20px;
   text-align: center;
@@ -220,7 +220,7 @@
 }
 
 .logIn-page .logIn-box form .login-btn p {
-  color: #696F79;
+  color: #696f79;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -230,7 +230,7 @@
 }
 
 .logIn-page .logIn-box form .login-btn p span {
-  color: #1565D8;
+  color: #1565d8;
   font-weight: 700;
   cursor: pointer;
 }

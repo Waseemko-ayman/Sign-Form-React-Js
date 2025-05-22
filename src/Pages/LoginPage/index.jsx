@@ -1,30 +1,29 @@
-import React, { useState } from "react";
-import "./style.css";
-import Logo from "../../Components/Logo";
-import Paragraph from "../../Components/Paragraph";
-import Inputs from "../../Components/Inputs";
-import Button from "../../Components/Button";
-import { PATHS } from "../../router/paths";
-import { useNavigate } from "react-router-dom";
-import GoogleImg from "../../assets/google.svg";
-import TwitterImg from "../../assets/twitter.svg";
-import LinkedInImg from "../../assets/linkedin.svg";
-import GithubImg from "../../assets/github.svg";
-import joystick from "../../assets/joystick.png";
-import logo from "../../assets/logo.svg";
-import { useAuthContext } from "../../Context/AuthContext";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as Yup from "yup";
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import './style.css';
+import Logo from '../../Components/Logo';
+import Paragraph from '../../Components/Paragraph';
+import Inputs from '../../Components/Inputs';
+import Button from '../../Components/Button';
+import { PATHS } from '../../router/paths';
+import { useNavigate } from 'react-router-dom';
+import GoogleImg from '../../assets/google.svg';
+import TwitterImg from '../../assets/twitter.svg';
+import LinkedInImg from '../../assets/linkedin.svg';
+import GithubImg from '../../assets/github.svg';
+import joystick from '../../assets/joystick.png';
+import logo from '../../assets/logo.svg';
+import { useAuthContext } from '../../Context/AuthContext';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+import { useForm } from 'react-hook-form';
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const formSchema = Yup.object({
   email: Yup.string()
-    .matches(emailRegex, "Enter Correct Email")
-    .required("Email is required"),
-    password: Yup.string()
-    .required("Password is required")
+    .matches(emailRegex, 'Enter Correct Email')
+    .required('Email is required'),
+  password: Yup.string().required('Password is required'),
 });
 
 const LogInPage = () => {
@@ -47,7 +46,7 @@ const LogInPage = () => {
 
   const hadnleShow = () => {
     setShow(!show);
-  }
+  };
 
   return (
     <div className="logIn-page">
@@ -80,30 +79,30 @@ const LogInPage = () => {
             <Inputs
               label="Your email*"
               type="email"
-              placeholder="Write your email"
+              placeholder="Enter your email"
               register={register}
               name="email"
               iconHidden
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
-            
+
             <Inputs
               label="Enter your Password*"
-              type={show ? "text" : "password"}
+              type={show ? 'text' : 'password'}
               placeholder="•••••••••"
               register={register}
               name="password"
-              iconClassName={show ? "fa-solid fa-eye-slash" : "fa-solid fa-eye"}
-              hadnleShow= {hadnleShow}
+              iconClassName={show ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'}
+              hadnleShow={hadnleShow}
             />
             {errors.password && (
               <p className="error">{errors.password.message}</p>
             )}
 
             <div className="login-btn">
-              <Button btnText={isLoading ? "Loading..." : "Login"} />
+              <Button btnText={isLoading ? 'Loading...' : 'Login'} />
               <p>
-                Don't have an account?{" "}
+                Don't have an account?{' '}
                 <span onClick={() => navigate(PATHS.SIGNUP)}>Register</span>
               </p>
             </div>
