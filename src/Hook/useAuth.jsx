@@ -1,20 +1,15 @@
-import { useReducer } from "react";
-import { ROLES } from "../Constants";
-import { AUTH_ACTIONS, AUTH_API_PATHS } from "../Constants/auth";
-import axios from "axios";
-import { AUTH_API_URL } from "../config/api";
+import { useReducer } from 'react';
+import { ROLES } from '../Constants';
+import { AUTH_ACTIONS, AUTH_API_PATHS } from '../Constants/auth';
+import axios from 'axios';
+import { AUTH_API_URL } from '../config/api';
 import Swal from 'sweetalert2';
 
-const getisAuth = () => localStorage.getItem("isAuth") || false;
-const getUser = () => JSON.parse(localStorage.getItem("user")) || null;
-const getToken = () => localStorage.getItem("token") || null;
-const getRole = () => localStorage.getItem("role") || ROLES.GUEST;
-
 const initialState = {
-  isAuth: getisAuth(),
-  user: getUser(),
-  token: getToken(),
-  role: getRole(),
+  isAuth: localStorage.getItem('isAuth') || false,
+  user: JSON.parse(localStorage.getItem('user')) || null,
+  token: localStorage.getItem('token') || null,
+  role: localStorage.getItem('role') || ROLES.GUEST,
   isLoading: false,
   error: null,
 };
@@ -28,12 +23,13 @@ const reduce = (state, action) => {
       };
 
     case AUTH_ACTIONS.AUTHORIZE:
-      const token = action?.payload?.token || state?.token || localStorage.getItem("token");
+      const token =
+        action?.payload?.token || state?.token || localStorage.getItem('token');
       const role = action?.payload?.isAdmin ? ROLES.ADMIN : ROLES.USER;
-      localStorage.setItem("token", token);
-      localStorage.setItem("role", role);
-      localStorage.setItem("isAuth", true);
-      localStorage.setItem("user", JSON.stringify(action.payload));
+      localStorage.setItem('token', token);
+      localStorage.setItem('role', role);
+      localStorage.setItem('isAuth', true);
+      localStorage.setItem('user', JSON.stringify(action.payload));
       return {
         isAuth: true,
         user: action.payload,
@@ -44,7 +40,7 @@ const reduce = (state, action) => {
       };
 
     case AUTH_ACTIONS.LOGOUT:
-      ["token", "user", "role", "isAuth"].forEach((item) =>
+      ['token', 'user', 'role', 'isAuth'].forEach((item) =>
         localStorage.removeItem(item)
       );
       return {
@@ -69,26 +65,29 @@ const reduce = (state, action) => {
 const useAuth = () => {
   const [state, dispatch] = useReducer(reduce, initialState);
   const token = state.token || localStorage.getItem('token');
-  const config = {headers: {Authorization: `Bearer ${token}`}};
+  const config = { headers: { Authorization: `Bearer ${token}` } };
 
   // Login
   const login = async (body) => {
     dispatch({ type: AUTH_ACTIONS.SET_LOADING });
     try {
-      const { data } = await axios.post(AUTH_API_URL + AUTH_API_PATHS.LOGIN, body);
+      const { data } = await axios.post(
+        AUTH_API_URL + AUTH_API_PATHS.LOGIN,
+        body
+      );
       dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
       Swal.fire({
-        icon : "success",
+        icon: 'success',
         title: 'Logged in Successfully',
         showConfirmButton: false,
-        timer: 2000
+        timer: 2000,
       });
     } catch (error) {
       Swal.fire({
-        icon : "error",
+        icon: 'error',
         title: 'The data is incorrect!',
         showConfirmButton: false,
-        timer: 2000
+        timer: 2000,
       });
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
     }
@@ -98,13 +97,16 @@ const useAuth = () => {
   const signup = async (body) => {
     dispatch({ type: AUTH_ACTIONS.SET_LOADING });
     try {
-      const { data } = await axios.post(AUTH_API_URL + AUTH_API_PATHS.SIGNUP, body);
+      const { data } = await axios.post(
+        AUTH_API_URL + AUTH_API_PATHS.SIGNUP,
+        body
+      );
       dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
       Swal.fire({
-        icon : "success",
+        icon: 'success',
         title: 'Registered Successfully',
         showConfirmButton: false,
-        timer: 2000
+        timer: 2000,
       });
     } catch (error) {
       dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
@@ -119,16 +121,19 @@ const useAuth = () => {
   // Get Profile Data
   const getProfileData = async () => {
     const token = localStorage.getItem('token');
-    if(!token) return
-      dispatch({ type: AUTH_ACTIONS.SET_LOADING });
-      try {
-        const { data } = await axios.get(AUTH_API_URL + AUTH_API_PATHS.PROFILE, config);
-        dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
-        return data
-      } catch (error) {
-        dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
-      }
-  }
+    if (!token) return;
+    dispatch({ type: AUTH_ACTIONS.SET_LOADING });
+    try {
+      const { data } = await axios.get(
+        AUTH_API_URL + AUTH_API_PATHS.PROFILE,
+        config
+      );
+      dispatch({ type: AUTH_ACTIONS.AUTHORIZE, payload: data?.data || data });
+      return data;
+    } catch (error) {
+      dispatch({ type: AUTH_ACTIONS.SET_ERROR, payload: error.message });
+    }
+  };
 
   // console.log(state)
 

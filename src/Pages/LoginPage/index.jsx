@@ -41,7 +41,7 @@ const LogInPage = () => {
 
   const onSubmit = async (data) => {
     login(data);
-    // console.log(data);
+    console.log(data);
   };
 
   const hadnleShow = () => {

@@ -120,13 +120,13 @@ const SignUpPage = () => {
               {errors.email && <p className="error">{errors.email.message}</p>}
 
               <Inputs
-                type={showPass ? "text" : "password"}
+                type={showPass ? 'text' : 'password'}
                 label="Create Password*"
                 placeholder="Password"
                 register={register}
                 name="password"
                 iconClassName={
-                  showPass ? "fa-solid fa-eye-slash" : "fa-solid fa-eye"
+                  showPass ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'
                 }
                 hadnleShow={hadnleShowPass}
               />
@@ -135,13 +135,13 @@ const SignUpPage = () => {
               )}
 
               <Inputs
-                type={showRePass ? "text" : "password"}
+                type={showRePass ? 'text' : 'password'}
                 label="Repeat password*"
                 placeholder="Repeat password"
                 register={register}
                 name="repeatPassword"
                 iconClassName={
-                  showRePass ? "fa-solid fa-eye-slash" : "fa-solid fa-eye"
+                  showRePass ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'
                 }
                 hadnleShow={hadnleShowRePass}
               />
@@ -154,7 +154,7 @@ const SignUpPage = () => {
                   <input
                     type="checkbox"
                     id="checkbox"
-                    register={register}
+                    {...register('checked')}
                     name="checked"
                     defaultChecked
                   />
@@ -168,7 +168,7 @@ const SignUpPage = () => {
               </div>
               <div className="register">
                 <Button
-                  btnText={isLoading ? "Loading..." : "Register Account"}
+                  btnText={isLoading ? 'Loading...' : 'Register Account'}
                 />
                 <span></span>
               </div>

@@ -7,6 +7,6 @@ export const PATHS = {
     USERSLIST: "/userslist",
   },
   ERRORS: {
-    NOT_FOUND: "404",
+    NOT_FOUND: "/404",
   },
 };
